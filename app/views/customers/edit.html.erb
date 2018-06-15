@@ -1,0 +1,50 @@
+<h1>Editing Customer</h1>
+ 
+<%= form_for :customer, url: customer_path(@customer), method: :patch do |f| %>
+  <% if @customer.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@customer.errors.count, "error") %> prohibited
+      this article from being saved:
+    </h2>
+    
+    <ul>
+      <% @customer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :surname %><br>
+    <%= f.text_field :surname %>
+  </p>
+
+  <p>
+    <%=f.label :tradename %><br>
+    <%= f.text_field :tradename %>
+  </p>
+
+  <p>
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </p>
+
+  <p>
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </p>  
+
+ 
+  <p>
+    <%= f.submit  value: 'Actualizar Cliente'%>
+  </p>
+
+
+<% end %>
+ 
+<%= link_to 'Back', customers_path %>

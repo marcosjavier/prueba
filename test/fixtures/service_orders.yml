@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  creation_date_at: 2018-03-17
+  last_move_date_at: 2018-03-17
+  estate: MyString
+
+two:
+  creation_date_at: 2018-03-17
+  last_move_date_at: 2018-03-17
+  estate: MyString

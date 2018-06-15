@@ -1,0 +1,7 @@
+exclude: "Muscle,Trainning,Exercise,TrainningItem"
+attributes:
+  - content
+  - foreign_key
+  - inheritance
+
+indirect: true

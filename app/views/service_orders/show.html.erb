@@ -1,0 +1,26 @@
+
+<p>
+  <strong>Creation Date:</strong>
+  <%= @service_order.creation_date_at %>
+</p>
+ 
+<p>
+  <strong>Last Move:</strong>
+  <%= @service_order.last_move_date_at %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @service_order.state.state %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @service_order.customer.name %>
+</p>
+
+
+
+<%=link_to "Volver a Clientes", customers_path %> <br>
+<%= link_to "Volver a Ordenes de Servicio", service_orders_path %> 
+
