@@ -1,0 +1,10 @@
+<tr>
+    <td> <%= @service_order.id %> </td>
+    <td> <%= @service_order.creation_date_at %> </td>
+    <td> <%= @service_order.last_move_date_at %> </td>
+    <td><%= @service_order.state.state %> </td>
+    <td> <%= @service_order.customer.name %> </td>
+    <td> <%=link_to "Customer", controller: "customers", action: "show", id: @service_order.customer_id %> </td>
+    <td> <%= link_to "Delete ", service_order_path(@service_order.id), method: :delete, data: {confirm: 'Esta seguro de eliminar este registro??'} %> </td>
+    <td>  <%= link_to "Edit", edit_service_order_path(@service_order.id), remote: true, class: "btn btn-primary" %> </td>
+</tr>

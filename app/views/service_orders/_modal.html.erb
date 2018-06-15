@@ -1,0 +1,38 @@
+<div class="modal" id="service_order_modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><%= title %></h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+          <div class="modal-body">
+           <%= form_for @service_order, remote: true do |f| %>
+            <% if @service_order.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@service_order.errors.count, "error") %> prohibited
+                  this article from being saved:</h2>
+                <ul>
+                  <% @service_order.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+           <%= f.label :creation_date_at %>
+            <%= f.text_field :creation_date_at %> <br>
+            <%= f.label :state %>
+            <%= f.select(:state_id, options_for_select([['abierto',1],['en espera',2],['cerrado',3]])) %> <br>
+            <%= fields_for @service_order, @service_order.customer do |customer_list| %>
+            <%= customer_list.collection_select :customer_id, Customer.all, :id, :list_of_customer, {prompt: 'Por favor, seleccione un cliente'} %> <br>
+            <% end%>
+            <%= f.submit 'guardar orden Servicio', class:"btn btn-primary" %>
+          <% end %>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      
+
+    </div>
+  </div>
+</div>

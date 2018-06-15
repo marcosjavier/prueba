@@ -1,0 +1,8 @@
+<% if @service_order.errors.present? %>
+  $('.modal-header').html('<%= j render 'errors' %>')
+
+<% else %>
+
+  $('#tabla').append('<%= j render "service_order" %>')
+  $('#service_order_modal').modal('hide')
+<% end %>

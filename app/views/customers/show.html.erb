@@ -1,0 +1,26 @@
+<p>
+  <strong>Cliente:</strong>
+  <%= @customer.name %>
+</p>
+ 
+<p>
+  <strong>Apellido:</strong>
+  <%= @customer.surname %>
+</p>
+
+<p>
+  <strong>Razon Social:</strong>
+  <%= @customer.tradename %>
+</p>
+
+<p>
+  <strong>Domicilio:</strong>
+  <%= @customer.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @customer.phone %>
+</p>
+
+<%=link_to "Atras", customers_path %>
