@@ -1,6 +1,9 @@
   class Customer < ActiveRecord::Base
-	validates :name, presence: true
-	has_many :service_orders
+	validates :name, presence: true, format: {with: /\A[a-zA-Z ]+\z/}
+	validates :surname, presence: true, format: {with: /\A[a-zA-Z ]+\z/}
+  #validates :tradename, presence: true, format: {with: /\A[a-zA-Z]+\z/}
+  validates :phone, numericality: { only_integer: true }
+  has_many :service_orders
 
 	def list_of_customer
 		"#{name.first}. #{surname}"

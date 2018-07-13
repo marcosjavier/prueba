@@ -6,52 +6,64 @@ class CustomersController < ApplicationController
 
   def new
     @customer = Customer.new
- end
+    respond_to do |format|
+      format.js
+      
+    end
+  end
 
- def show
+  def show
     @customer = Customer.find(params[:id])
- end
+  end
 
-    def create
-      @customer = Customer.new(customer_params)
+  def create
+    @customer = Customer.new(customer_params)
 
-      if @customer.save
-        redirect_to @customer
-      else
-        render 'new'
-      end
+    @customer.save
+    respond_to do |format|
+      format.js
+      
     end
+     
+     # redirect_to @customer
+    #else
+    #  render 'new'
+    #end
+  end
 
-    def edit
-      @customer = Customer.find(params[:id])
+  def edit
+    @customer = Customer.find(params[:id])
+
+  end
+
+  def update
+    @customer = Customer.find(params[:id])
+    @customer.update(customer_params)
+      
+    #else
+     # render 'edit'
+    #end
+    respond_to do |format|
+      format.js
+      
     end
+  end
 
-    def update
-      @customer = Customer.find(params[:id])
-      if @customer.update(customer_params)
-        redirect_to @customer
+  def destroy
+    @customer = Customer.find(params[:id])
+    @customer.destroy
+    redirect_to customers_path
+  end
 
-      else
-        render 'edit'
-      end
+  private
+    def customer_params
+      params.require(:customer).permit(
+        :name,
+        :surname,
+        :tradename,
+        :address,
+        :phone,
+      )
+
     end
-
-    def destroy
-      @customer = Customer.find(params[:id])
-      @customer.destroy
-      redirect_to customers_path
-    end
-
-    private
-      def customer_params
-        params.require(:customer).permit
-        (
-          :name
-          :surname
-          :tradename
-          :address
-          :phone
-        )
-
-      end
 end

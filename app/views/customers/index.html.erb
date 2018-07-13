@@ -17,15 +17,14 @@
       <td><%= c.address %></td>
       <td><%= c.phone %></td>
 
-      <td> <%= link_to 'Show', customer_path(c.id) %></td>
-      <td> <%= link_to 'Edit', edit_customer_path(c.id) %> </td>
+      <td> <%= link_to 'Edit', edit_customer_path(c.id), remote: true %> </td>
       <td> <%= link_to 'Delete', customer_path(c.id), method: :delete, data: { confirm: '¿Está seguro de querer borrar este registro?'} %> </td>
 
 
-    </tr>    
+    </tr>
   <% end %>
   <tr> 
-      <td><%= link_to 'Agregar Cliente', new_customer_path %></td>
+      <td><%= link_to 'Agregar Cliente', new_customer_path, remote: true %></td>
   </tr>
 </table>
 

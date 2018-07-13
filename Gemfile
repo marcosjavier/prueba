@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0'
+gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -42,4 +42,7 @@ gem 'pry-rails'
 gem 'bootstrap', '~> 4.1.1'
 gem 'autoprefixer-rails'
 gem 'devise'
-
+gem 'simple_form'
+gem 'xray-rails'
+gem 'i18n-tasks', '~> 0.9.21'
+gem 'sprockets-rails', :require => 'sprockets/railtie'

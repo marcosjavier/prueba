@@ -1,0 +1,5 @@
+<% if @customer.errors.any? %>
+  $('.modal-body').html("<%=j render('customers/form', customer: @customer) %>");
+<% else %>
+ location.reload();
+<% end%>

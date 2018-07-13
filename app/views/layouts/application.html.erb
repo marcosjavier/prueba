@@ -7,12 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container-fluid">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= unless user_signed_in? != true
+  <div class="container">
+      <div><p class="notice"><%= notice %></p></div>
+      <div><p class="alert"><%= alert %></p></div>
+      <div><%= unless user_signed_in? != true
         link_to 'log out', destroy_user_session_path, method: :delete
-      end %>
+      end %> </div>
 
      <%= yield %>
   </div>

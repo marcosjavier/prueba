@@ -1,0 +1,45 @@
+---
+es:
+  activerecord:
+    attributes:
+      customer:
+        name: Nombre
+        surname: Apellido
+        tradename: Razon Social
+        address: Dirección
+        phone: Teléfono
+        new_customer: Nuevo cliente
+      user:
+        available_gyms: Gimnasios disponibles
+        email: Correo Electrónico
+        full_name: Nombre completo
+        password: Contraseña
+        password_confirmation: Confirmar Contraseña
+    models:
+      customer: Cliente
+      service_order: Orden de Servicio
+      state: Estado
+      user: Usuario
+    errors:
+      models:
+        customer:
+          attributes:
+            name:
+              blank: "ESTE CAMPO NO PUEDE ESTAR VACÍO"
+              invalid: "SOLO SE PERMITEN LETRAS"
+            phone:
+              not_a_number: "NO ES UN NÚMERO"
+  common:
+  customers:
+    edit:
+      edit_customer: Editar Cliente
+    new:
+      new_customer: Nuevo Cliente
+  cancel: Cancelar
+  devise:
+    failure:
+      user:
+        unauthenticated: "Usuario no autenticado"
+    sessions:
+      user:
+        signed_in: "Usuario registrado"

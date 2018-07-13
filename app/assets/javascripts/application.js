@@ -12,8 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-
-//controlar porque carga dos veces turbolinks
+//= require xray
 //= require turbolinks
+//= require jquery3
+//= require popper
 //= require bootstrap-sprockets
 //= require_tree .
