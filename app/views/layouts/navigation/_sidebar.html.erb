@@ -1,0 +1,16 @@
+<div class="sidebar" data-color="black" data-active-color = "danger">
+  <div class="sidebar-wrapper" >
+    <ul class="nav">
+      <li class= <%= "active" if params[:controller] == 'customers' %> >
+        <a href="<%=customers_path%>" >
+          <i class="nc-icon nc-diamond"></i>
+          <p>Clientes</p>
+        </a>
+      </li>
+      <li class=<%= "active" if params[:controller] == 'service_orders' %> >
+        <%= link_to 'Ordenes de servicios',service_orders_path %>
+      </li>
+      
+    </ul>
+  </div>
+</div>

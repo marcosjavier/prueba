@@ -1,1 +1,1 @@
-$('<%= j render "modal", title: "Agregar Nueva Orden de Servicio" , xray: false %> ').modal('show')
+$("<%= j modal_bootstrap(render('service_orders/form', service_order: @service_order), title: t('.edit_service_order'))%> ").modal().show();

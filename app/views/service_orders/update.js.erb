@@ -1,5 +1,5 @@
 <% if @service_order.errors.present? %>
-  $('.modal-body').html("<%=j render 'form', @service_order %>");
+  $('.modal-body').html("<%=j render 'service_orders/form', @service_order %>");
 <% else %>
   location.reload();
 <% end %>

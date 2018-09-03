@@ -1,4 +1,5 @@
 class CustomersController < ApplicationController
+  before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
   def index
     @customers = Customer.all
@@ -8,13 +9,10 @@ class CustomersController < ApplicationController
     @customer = Customer.new
     respond_to do |format|
       format.js
-      
     end
   end
 
-  def show
-    @customer = Customer.find(params[:id])
-  end
+  def show; end
 
   def create
     @customer = Customer.new(customer_params)
@@ -22,35 +20,20 @@ class CustomersController < ApplicationController
     @customer.save
     respond_to do |format|
       format.js
-      
     end
-     
-     # redirect_to @customer
-    #else
-    #  render 'new'
-    #end
   end
 
-  def edit
-    @customer = Customer.find(params[:id])
-
-  end
+  def edit; end
 
   def update
-    @customer = Customer.find(params[:id])
     @customer.update(customer_params)
-      
-    #else
-     # render 'edit'
-    #end
     respond_to do |format|
       format.js
-      
+
     end
   end
 
   def destroy
-    @customer = Customer.find(params[:id])
     @customer.destroy
     redirect_to customers_path
   end
@@ -65,5 +48,9 @@ class CustomersController < ApplicationController
         :phone,
       )
 
+    end
+
+    def set_customer
+      @customer = Customer.find(params[:id])
     end
 end

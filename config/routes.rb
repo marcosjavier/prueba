@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   devise_for :users
   root 'welcome#index'
   resources :customers
-  resources :service_orders
+  resources :service_orders do
+    collection do
+      get 'filter_by_date'
+      post 'filter_by_date', defaults: {format: :js}
+    end
+  end
 
 
 

@@ -1,23 +1,6 @@
-<%= form_for @service_order, remote: true do |f| %>
-  <% if @service_order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@service_order.errors.count, "error") %> prohibited
-        this article from being saved:</h2>
-      <ul>
-        <% @service_order.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-    <%= f.label :creation_date_at %>
-    <%= f.text_field :creation_date_at %> <br>
-    <%= f.label :state %>
-    <%= f.select(:state_id, options_for_select([['abierto',1],['en espera',2],['cerrado',3]])) %> <br>
-    <%= fields_for @service_order, @service_order.customer do |customer_list| %>
-    <%= customer_list.collection_select :customer_id, Customer.all, :id, :list_of_customer, {prompt: 'Por favor, seleccione un cliente'} %>
-    <% end%> <br> 
-    <%= f.submit 'guardar' %>
-
-
+<%= simple_form_for service_order, remote: true do |f| %>
+  <%= f.input :creation_date_at, as: :date, html5: true %>
+  <%= f.association :state, label_method: :state, value_method: :id %>
+  <%= f.association :customer, as: :select %>
+  <%= f.submit 'guardar' %>
 <% end %>

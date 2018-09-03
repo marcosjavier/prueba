@@ -7,4 +7,6 @@
 #    $('#formAjax').toggle()
 #    return
 #  return
-  
+#$(document).ready ->
+ # ('#busqueda').submit ->
+  #  preventDefault()
