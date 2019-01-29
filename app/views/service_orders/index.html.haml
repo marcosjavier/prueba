@@ -1,0 +1,16 @@
+.container-fluid
+  .row
+    .col-6
+      %h4
+        = t('.Listing_Service_Orders')
+    .card
+      .col-md-3
+        #search
+          = simple_form_for :search, url: filter_by_date_service_orders_path, remote: true do |f|
+            = f.input :date_start, as: :date, input_html: { value: Date.today }, html5: true
+            = f.input :date_end, as: :date, input_html: { value: Date.today }, html5: true
+            = f.submit "buscar"
+.card#table
+
+  =render 'service_order_table', service_orders: @service_orders
+  = link_to "Agregar nueva orden servicios", new_service_order_path, remote: true, class: "btn btn-primary"

@@ -1,0 +1,11 @@
+es:
+  simple_form:
+    "yes": 'si'
+    "no": 'No'
+    required:
+      text: requerido
+      mark: '*'
+    labels:
+      defaults:
+        date_start: Inicio de Fecha
+        date_end: Fin de Fecha

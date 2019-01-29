@@ -11,20 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180522223330) do
+ActiveRecord::Schema.define(version: 20181015132702) do
 
-  create_table "customers", force: true do |t|
-    t.string   "name"
-    t.string   "surname"
-    t.string   "tradename"
-    t.string   "address"
+  create_table "customers", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "surname",    limit: 255
+    t.string   "tradename",  limit: 255
+    t.string   "address",    limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "phone"
+    t.string   "phone",      limit: 255
   end
 
-  create_table "service_orders", force: true do |t|
-    t.date     "creation_date_at"
+  create_table "service_orders", force: :cascade do |t|
     t.date     "last_move_date_at"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -35,25 +34,25 @@ ActiveRecord::Schema.define(version: 20180522223330) do
   add_index "service_orders", ["customer_id"], name: "index_service_orders_on_customer_id"
   add_index "service_orders", ["state_id"], name: "index_service_orders_on_state_id"
 
-  create_table "states", force: true do |t|
-    t.string   "state"
+  create_table "states", force: :cascade do |t|
+    t.string   "state",      limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                      default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -1,1 +1,1 @@
-$("<%= j render 'modal', title: t('.new_service_order') %> ").modal().show();
+$("<%=j modal_bootstrap(render('form', service_order: @service_order), title: t('.new_service_order')) %> ").modal().show();

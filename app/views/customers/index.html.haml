@@ -1,0 +1,32 @@
+%h1= t('.listing_customers')
+%table.table
+  %tr
+    %th= t('.id')
+    %th= t('.name')
+    %th= t('.surname')
+    %th= t('.tradename') 
+    %th= t('.address') 
+    %th= t('.phone')
+    %th= t('.service_orders')
+  - @customers.each do |c|
+    %tr
+      %td= c.id
+      %td= c.name
+      %td= c.surname
+      %td= c.tradename
+      %td= c.address
+      %td= c.phone
+      %td
+        = link_to 'Edit', edit_customer_path(c.id), remote: true
+      %td
+        = link_to 'Delete', customer_path(c.id), method: :delete, data: { confirm: '¿Está seguro de querer borrar este registro?'}
+      %td
+        = link_to 'Service Orders', service_orders_list_customer_path(c.id), remote: true
+  %tr
+    %td= link_to 'Agregar Cliente', new_customer_path, remote: true
+%br/
+%br/
+%table
+  %tr
+    %td
+      = link_to 'INICIO', welcome_index_path

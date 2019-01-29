@@ -1,0 +1,17 @@
+%table.table
+  %tr
+    %th= t('.id')
+    %th= t('.creation_date')
+    %th= t('.last_move_date')
+    %th= t('.state')
+    
+  - service_orders.each do |os|
+    %tr
+      %td
+        = os.id
+      %td
+        = os.created_at.strftime('%d-%m-%Y')
+      %td
+        = os.updated_at.strftime('%d-%m-%Y')
+      %td
+        = os.state.state

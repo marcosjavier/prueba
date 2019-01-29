@@ -1,0 +1,7 @@
+#error_explanation
+  %h1
+    = pluralize(@service_order.errors.count, "error")
+    evita que esta orden de servicio se guarde
+  %ul
+    - @service_order.errors.full_messages.each do |msg|
+      %li= msg

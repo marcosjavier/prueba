@@ -1,8 +1,7 @@
 <% if @service_order.errors.present? %>
-  $('.modal-header').html('<%= j render 'errors' %>')
-
+  $('.modal-body').html("<%= j render 'form', service_order: @service_order %>");
 <% else %>
-
-  $('#tabla').append('<%= j render "service_order" %>')
-  $('#service_order_modal').modal('hide')
-<% end %>
+  <% #$('#tabla').append("<%= j render 'service_order_table', service_orders: @service_order %>");%>
+  <% #$('#service_order_modal').modal().hide();%>
+  window.location.href = '<%= service_orders_path %>';
+<% end%>

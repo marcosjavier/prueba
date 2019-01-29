@@ -1,0 +1,23 @@
+%table.table
+  %tr
+    %th= t('.id')
+    %th= t('.creation_date')
+    %th= t('.last_move_date')
+    %th= t('.state')
+    %th= t('.customer')
+  - service_orders.each do |os|
+    %tr
+      %td
+        = os.id
+      %td
+        = os.created_at.strftime('%d-%m-%Y')
+      %td
+        = os.updated_at.strftime('%d-%m-%Y')
+      %td
+        = os.state.state
+      %td
+        = link_to "View", customer_path(os.customer.id), remote: true
+      %td
+        = link_to "Delete ", service_order_path(os.id), method: :delete, data: {confirm: 'Esta seguro de eliminar este registro??'}
+      %td
+        = link_to "Edit", edit_service_order_path(os.id), remote: true, class: "btn btn-primary"

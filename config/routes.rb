@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   
   devise_for :users
   root 'welcome#index'
-  resources :customers
+  resources :customers do
+    member do
+      get 'service_orders_list'
+    end
+  end
   resources :service_orders do
     collection do
       get 'filter_by_date'

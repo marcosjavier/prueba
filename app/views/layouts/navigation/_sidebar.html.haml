@@ -1,0 +1,11 @@
+.sidebar{"data-active-color" => "sucess", "data-background-color" => "black" }
+  .sidebar-wrapper
+    %ul.nav
+      %li{ class: "#{'active' if params[:controller] == 'customers' }" }
+        %a{:href => customers_path}
+          %i.ti-user
+          %p Clientes
+      %li{ class: "#{'active' if params[:controller] == 'service_orders'}" }
+        %a{:href => service_orders_path}
+          %i.ti-view-list-alt
+          %p Ordenes Servicio

@@ -1,0 +1,7 @@
+%nav.navbar.navbar-default{"data-background-color" => "orange"}
+  .container-fluid
+    .navbar-wrapper
+      .navbar-nav
+        .nav-item
+          - unless user_signed_in? != true
+            = link_to 'log out', destroy_user_session_path, method: :delete

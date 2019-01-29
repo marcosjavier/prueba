@@ -1,0 +1,16 @@
+%p
+  %strong Cliente:
+  = @customer.name
+%p
+  %strong Apellido:
+  = @customer.surname
+%p
+  %strong Razon Social:
+  = @customer.tradename
+%p
+  %strong Domicilio:
+  = @customer.address
+%p
+  %strong Phone:
+  = @customer.phone
+= link_to "Atras", customers_path

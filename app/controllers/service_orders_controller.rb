@@ -4,6 +4,11 @@ class ServiceOrdersController < ApplicationController
   def index
     @service_orders = ServiceOrder.all
     @service_order = ServiceOrder.new
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf { render template: 'service_orders/report', pdf: 'report'}
+    end
   end
 
   def show
@@ -14,25 +19,25 @@ class ServiceOrdersController < ApplicationController
   end
 
   def new
-    @service_order = ServiceOrder.new(creation_date_at: Time.zone.today)
+    @service_order = ServiceOrder.new(created_at: Time.zone.today)
   end
 
   def create
     @service_order = ServiceOrder.create(service_order_params)
-    if @service_order.save
-      respond_to do |format|
-        format.html do
-          redirect_to @service_order,
-          notice: t('.a new service order has been created')
-        end
-        format.js
-        format.json do
-          render json: @service_order,
-          status: :created,
-          location: @service_order
-        end
-      end
+    #@service_order.save
+    respond_to do |format|
+      #format.html do
+      #  redirect_to @service_order,
+      #  notice: t('.a new service order has been created')
+      #end
+      format.js
+      #format.json do
+       # render json: @service_order,
+       # status: :created,
+        #location: @service_order
     end
+    
+    
   end
 
   def edit
@@ -55,7 +60,7 @@ class ServiceOrdersController < ApplicationController
 
   end
   def filter_by_date
-    @service_orders = ServiceOrder.where(created_at: params[:date_start]..params[:date_end])
+    @service_orders = ServiceOrder.filter(params[:search][:date_start],params[:search][:date_end])
     #pry.binding
     respond_to do |format|
       format.js
@@ -66,7 +71,7 @@ class ServiceOrdersController < ApplicationController
 
   	def service_order_params
   		params.require(:service_order).permit(
-  		:creation_date_at,
+  		:created_at,
   		:last_move_date_at,
   		:state_id,
   		:customer_id,

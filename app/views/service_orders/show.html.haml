@@ -1,0 +1,15 @@
+%p
+  %strong Creation Date:
+  = @service_order.creation_date_at
+%p
+  %strong Last Move:
+  = @service_order.last_move_date_at
+%p
+  %strong State:
+  = @service_order.state.state
+%p
+  %strong Customer:
+  = @service_order.customer.name
+= link_to "Volver a Clientes", customers_path
+%br/
+= link_to "Volver a Ordenes de Servicio", service_orders_path

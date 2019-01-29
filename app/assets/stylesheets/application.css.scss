@@ -11,8 +11,14 @@
  * file per style scope.
  *
  *= require xray
- *= require_tree .
+ *= require font-awesome
+ *= require themify-icons
+ *= require paper-dashboard
  *= require_self
  */
 
-@import 'bootstrap';
+
+@import "bootstrap";
+
+
+

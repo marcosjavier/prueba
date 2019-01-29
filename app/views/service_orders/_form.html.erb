@@ -1,6 +1,0 @@
-<%= simple_form_for service_order, remote: true do |f| %>
-  <%= f.input :creation_date_at, as: :date, html5: true %>
-  <%= f.association :state, label_method: :state, value_method: :id %>
-  <%= f.association :customer, as: :select %>
-  <%= f.submit 'guardar' %>
-<% end %>

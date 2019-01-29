@@ -1,3 +1,56 @@
 ---
 en:
+  activerecord:
+    attributes:
+      customer:
+        address: Dirección
+        name: Nombre
+        new_customer: Nuevo cliente
+        phone: Teléfono
+        surname: Apellido
+        tradename: Razon Social
+      user:
+        available_gyms: Gimnasios disponibles
+        email: Correo Electrónico
+        full_name: Nombre completo
+        password: Contraseña
+        password_confirmation: Confirmar Contraseña
+    errors:
+      models:
+        customer:
+          attributes:
+            name:
+              blank: ESTE CAMPO NO PUEDE ESTAR VACÍO
+              invalid: SOLO SE PERMITEN LETRAS
+            phone:
+              not_a_number: NO ES UN NÚMERO
+    models:
+      customer: Cliente
+      service_order: Orden de Servicio
+      state: Estado
+      user: Usuario
+  cancel: Cancelar
+  common: Common
+  customers:
+    edit:
+      edit_customer: Editar Cliente
+    new:
+      new_customer: Nuevo Cliente
+    show:
+      new_customer: New customer
+  devise:
+    failure:
+      user:
+        invalid: Usuario no válido
+        unauthenticated: Usuario no autenticado
+    sessions:
+      user:
+        signed_in: Usuario registrado
   hello: Hello world
+  service_orders:
+    create:
+      a new service order has been created: A new service order has been created
+    edit:
+      edit_service_order: Edit service order
+    new:
+      new_service_order: New service order
