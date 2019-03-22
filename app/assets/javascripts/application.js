@@ -13,7 +13,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery3
+// require jquery3
 //= require bootstrap
+//= require bootstrap-checkbox-radio
+//= require chartist.min
+//= require bootstrap-notify
+//= require paper-dashboard
 //= require turbolinks
-//= require_tree .
+// require_tree .

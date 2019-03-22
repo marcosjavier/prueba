@@ -10,15 +10,18 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *
  *= require xray
+ *= require_self
+ *= require css/animate.min
+ *= require css/paper-dashboard
  *= require font-awesome
  *= require themify-icons
- *= require paper-dashboard
- *= require_self
  */
 
-
+@import "bootstrap-sprockets";
 @import "bootstrap";
+
 
 
 

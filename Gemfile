@@ -57,3 +57,6 @@ gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'themify-icons-rails' , github: 'scratch-soft/themify-icons-rails'
 gem 'bourbon'
+
+#geocoder gem
+gem 'geocoder'

@@ -1,0 +1,1 @@
+Rails.application.config.assets.precompile += %w( login_form.css bootstrap.min.css )

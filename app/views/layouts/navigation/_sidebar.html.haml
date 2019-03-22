@@ -1,5 +1,8 @@
-.sidebar{"data-active-color" => "sucess", "data-background-color" => "black" }
+.sidebar{"data-active-color" => "danger", "data-background-color" => "white" }
   .sidebar-wrapper
+    .logo
+      %a.simple-text{:href => root_path}
+        Localhost
     %ul.nav
       %li{ class: "#{'active' if params[:controller] == 'customers' }" }
         %a{:href => customers_path}
