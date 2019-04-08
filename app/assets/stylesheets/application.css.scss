@@ -13,14 +13,15 @@
  *
  *= require xray
  *= require_self
- *= require css/animate.min
- *= require css/paper-dashboard
+ * require css/animate.min
+ *= require material-dashboard
  *= require font-awesome
  *= require themify-icons
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "germanica";
 
 
 

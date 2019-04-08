@@ -4,11 +4,20 @@ en:
     attributes:
       customer:
         address: Dirección
+        created_at: Creado
+        id: ID
         name: Nombre
         new_customer: Nuevo cliente
         phone: Teléfono
         surname: Apellido
         tradename: Razon Social
+        updated_at: Actualizado
+      service_order:
+        creation_date_at: Fecha de creacion
+        customer: Cliente
+        id: ID
+        last_move_date_at: Fecha de ultimo movimiento
+        state: Estado
       user:
         available_gyms: Gimnasios disponibles
         email: Correo Electrónico
@@ -32,12 +41,29 @@ en:
   cancel: Cancelar
   common: Common
   customers:
+    customer_service_orders:
+      creation_date: Creation date
+      id: Id
+      last_move_date: Last move date
+      state: State
     edit:
       edit_customer: Editar Cliente
+    index:
+      address: Address
+      id: Id
+      listing_customers: Listing customers
+      name: Name
+      phone: Phone
+      service_orders: Service orders
+      surname: Surname
+      tradename: Tradename
     new:
       new_customer: Nuevo Cliente
+    service_orders_list:
+      service_orders: Service orders
     show:
       new_customer: New customer
+      view_customer: Ver Cliente
   devise:
     failure:
       user:
@@ -52,5 +78,13 @@ en:
       a new service order has been created: A new service order has been created
     edit:
       edit_service_order: Edit service order
+    index:
+      Listing_Service_Orders: Listing service orders
     new:
       new_service_order: New service order
+    service_order_table:
+      creation_date: Creation date
+      customer: Customer
+      id: Id
+      last_move_date: Last move date
+      state: State

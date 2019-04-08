@@ -4,22 +4,26 @@ es:
     attributes:
       customer:
         address: Dirección
+        created_at: Creado
+        id: ID
         name: Nombre
         new_customer: Nuevo cliente
         phone: Teléfono
         surname: Apellido
-        tradename: Razon Social
+        tradename: Razón Social
+        updated_at: Actualizado
+      service_order:
+        creation_date_at: Fecha de creacioón
+        customer: Cliente
+        id: ID
+        last_move_date_at: Fecha de último movimiento
+        state: Estado
       user:
         available_gyms: Gimnasios disponibles
         email: Correo Electrónico
         full_name: Nombre completo
         password: Contraseña
         password_confirmation: Confirmar Contraseña
-      service_order:
-        creation_date_at: Fecha de creacion
-        last_move_date_at: Fecha de ultimo movimiento
-        state: Estado
-        customer: Cliente
     errors:
       models:
         customer:
@@ -37,12 +41,29 @@ es:
   cancel: Cancelar
   common: Common
   customers:
+    customer_service_orders:
+      creation_date: Fecha de Creación
+      id: Id
+      last_move_date: Fecha último Movimiento
+      state: estado
     edit:
       edit_customer: Editar Cliente
+    index:
+      address: Dirección
+      id: ID
+      listing_customers: Lista de Clientes
+      name: Nombre
+      phone: Telefono
+      service_orders: Ordenes de Servicios
+      surname: Apellido
+      tradename: Razon Social
     new:
       new_customer: Nuevo Cliente
+    service_orders_list:
+      service_orders: Ordenes de Servicios
     show:
-      new_customer: Ver Cliente
+      new_customer: Nuevo Cliente
+      view_customer: Ver Cliente
   devise:
     failure:
       user:
@@ -57,5 +78,13 @@ es:
       a new service order has been created: A new service order has been created
     edit:
       edit_service_order: Editar Orden de Servicio
+    index:
+      Listing_Service_Orders: Lista de Ordenes de Servicios
     new:
       new_service_order: Nueva Orden de Servicio
+    service_order_table:
+      creation_date: Fecha de Creación
+      customer: Cliente
+      id: Id
+      last_move_date: Fecha de último movimiento
+      state: Estado

@@ -1,14 +1,14 @@
 .row
   .col-md-12
     .card
-      .header
+      .card-header{"data-background-color" => "red"}
         %h4.title
           = t('.listing_customers')
         %p.category
           = t('.listing_customers')
-      .content.table-responsive.table-full-width
-        %table.table.table-hover
-          %thead
+      .card-content.table-responsive
+        %table.table
+          %thead.text-primary
             %tr
               %th= t('.id')
               %th= t('.name')

@@ -15,7 +15,7 @@ class ServiceOrder < ActiveRecord::Base
 	end
 
   def self.filter(date_start,date_end)
-    service_orders = ServiceOrder.where(creation_date_at: date_start..date_end)
+    service_orders = ServiceOrder.where(created_at: date_start..date_end)
 
   end
 
