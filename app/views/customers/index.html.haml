@@ -16,7 +16,7 @@
               %th= t('.tradename') 
               %th= t('.address') 
               %th= t('.phone')
-              %th= t('.service_orders')
+              
           - @customers.each do |c|
             %tbody
               %tr
@@ -31,7 +31,7 @@
                 %td
                   = link_to 'Delete', customer_path(c.id), method: :delete, data: { confirm: '¿Está seguro de querer borrar este registro?'}
                 %td
-                  = link_to 'Service Orders', service_orders_list_customer_path(c.id), remote: true
+                  = link_to 'Ordenes de Servicios', service_orders_list_customer_path(c.id), remote: true
 
   = link_to 'Agregar Cliente', new_customer_path, remote: true
-  = link_to 'INICIO', welcome_index_path
+  

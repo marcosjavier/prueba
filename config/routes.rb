@@ -14,6 +14,15 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :maintenances do
+    collection do
+      get 'pending'
+    end
+  end
+  
+
+
+
 
 
   get 'welcome/index'

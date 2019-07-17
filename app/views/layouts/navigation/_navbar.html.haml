@@ -8,22 +8,7 @@
         %span.icon-bar.bar3
       %a.navbar-brand{:href => "#"} Dashboard
     .collapse.navbar-collapse
-      %ul.nav.navbar-nav.navbar-right
-        %li
-          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-            %i.ti-panel
-            %p Stats
-        %li.dropdown
-          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-            %i.ti-bell
-            %p.notification 5
-            %p Notifications
-            %b.caret
-          %ul.dropdown-menu
-            %li
-              %a{:href => "#"} Notification 1
-            %li
-              %a{:href => "#"} Another notification
+      %ul.nav.navbar-nav.navbar-right        
         %li
           - unless user_signed_in? != true
             = link_to 'LOG OUT', destroy_user_session_path, method: :delete

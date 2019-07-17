@@ -1,0 +1,7 @@
+= simple_form_for @maintenance do |f|
+	= f.input :observations
+	= f.input :pending_date, as: :date, html5: true
+	= f.input :maintenance_date_made, as: :date, html5: true
+	= f.input :status, collection: Maintenance.statuses, label_method: :second, value_method: :first
+	= f.association :customer, collection: Customer.all
+	= f.submit 'guardar'

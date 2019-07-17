@@ -1,10 +1,13 @@
 class ServiceOrder < ActiveRecord::Base
-	before_create :set_fields
+	scope :pending, -> { where(state_id: 2)}
+    before_create :set_fields
 	belongs_to :customer
-  belongs_to :state
+	belongs_to :state
+	
 
-  validates :customer_id, presence: { message: ' El campo del Cliente no puede estar en vacio' }
-  validates :state_id, presence: true
+	validates :customer_id, presence: { message: ' El campo del Cliente no puede estar en vacio' }
+	validates :state_id, presence: true
+
 
 
 

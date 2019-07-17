@@ -1,0 +1,18 @@
+%table.table.table-striped
+	%tr
+		%th= t('.id')
+		%th= t('.observations')
+		%th= t('.pending_date')
+		%th= t('.maintenance_date_made')
+		%th= t('.status')
+		%th= t('.customer')
+	- pending_maintenances.each do |pending|
+
+		%td= pending.id
+		%td= pending.observations
+		%td= pending.pending_date
+		%td= pending.maintenance_date_made
+		%td= pending[:status]
+		%td= pending.customer.name
+		%td= link_to t('.edit'), edit_maintenance_path(pending.id)
+	

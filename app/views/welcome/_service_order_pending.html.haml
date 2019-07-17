@@ -1,0 +1,14 @@
+%table.table.table-striped
+	%tr
+		%th= t('.id')
+		%th= t('.creation_date')
+		%th= t('.last_move_date')
+		%th= t('.actual_state')
+		
+	- pending_service_orders.each do |os|
+		%tr
+			%td= os.id
+			%td= os.created_at.strftime('%d-%m-%Y')
+			%td= os.updated_at.strftime('%d-%m-%Y')
+			%td= os.state.state
+			%td= link_to "Edit", edit_service_order_path(os.id), remote: true, class: "btn btn-primary"

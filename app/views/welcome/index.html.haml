@@ -1,3 +1,10 @@
 .content
   %p Bienvenido a la aplicación
 
+#table_service_orders_pending
+=render 'service_order_pending', pending_service_orders: @pending_services_orders
+
+#table_pending_maintenances
+= render 'pending_maintenances', pending_maintenances: @pending_maintenances
+
+

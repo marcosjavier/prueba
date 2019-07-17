@@ -12,6 +12,12 @@ es:
         surname: Apellido
         tradename: Razón Social
         updated_at: Actualizado
+      maintenance:
+        customer: Cliente
+        maintenance_date_made: Fecha de trabajo Realizado
+        observations: Observaciones
+        pending_date: Fecha pendiente
+        status: Estado
       service_order:
         creation_date_at: Fecha de creacioón
         customer: Cliente
@@ -73,6 +79,29 @@ es:
       user:
         signed_in: Usuario registrado
   hello: Hello world
+  layouts:
+    navigation:
+      sidebar:
+        maintenance_list: Maintenance list
+        maintenance_list_pending: Maintenance list pending
+        new_maintenance: New maintenance
+  maintenances:
+    index:
+      customer: Cliente
+      id: Id
+      maintenance_date_made: Fecha de Mantenimiento Realizado
+      maintenance_list: Lista de Mantenimientos
+      observations: Observaciones
+      pending_date: Fecha de Mantenimiento Pendiente
+      status: Estados
+    pending:
+      customer: Cliente
+      id: Id
+      maintenance_date_made: Fecha de Mantenimiento Realizado
+      maintenance_list_pending: Lista Mantenimiento Pendiente
+      observations: Observaciones
+      pending_date: Fecha de Mantenimiento Pendiente
+      status: Estado
   service_orders:
     create:
       a new service order has been created: A new service order has been created
@@ -83,8 +112,22 @@ es:
     new:
       new_service_order: Nueva Orden de Servicio
     service_order_table:
+      actual_state: Estado Actual
       creation_date: Fecha de Creación
       customer: Cliente
       id: Id
       last_move_date: Fecha de último movimiento
-      state: Estado
+      state: State
+  welcome:
+    pending_maintenances:
+      customer: Cliente
+      id: Id
+      maintenance_date_made: Fecha de Mantenimiento Realizado
+      observations: Observaciones
+      pending_date: Fecha Mantenimiento Pendiente
+      status: Estado
+    service_order_pending:
+      actual_state: Estado Actual
+      creation_date: Fecha de Creacion
+      id: Id
+      last_move_date: Fecha de ultimo Movimiento

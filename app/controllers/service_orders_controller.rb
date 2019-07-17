@@ -4,6 +4,8 @@ class ServiceOrdersController < ApplicationController
   def index
     @service_orders = ServiceOrder.all
     @service_order = ServiceOrder.new
+    @service_order_pending = ServiceOrder.pending
+    
     respond_to do |format|
       format.html
       format.json
