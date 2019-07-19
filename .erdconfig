@@ -1,4 +1,4 @@
-exclude: "Muscle,Trainning,Exercise,TrainningItem"
+exclude:
 attributes:
   - content
   - foreign_key

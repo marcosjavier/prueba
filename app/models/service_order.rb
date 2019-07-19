@@ -1,5 +1,6 @@
 class ServiceOrder < ActiveRecord::Base
 	scope :pending, -> { where(state_id: 2)}
+	scope :created_between, ->(date_start,date_end) { where(created_at: date_start..date_end) }
     before_create :set_fields
 	belongs_to :customer
 	belongs_to :state
@@ -17,9 +18,10 @@ class ServiceOrder < ActiveRecord::Base
 
 	end
 
-  def self.filter(date_start,date_end)
-    service_orders = ServiceOrder.where(created_at: date_start..date_end)
+  #def self.filter(date_start,date_end)
+  #
+  #  service_orders = ServiceOrder.where(created_at: date_start..date_end)
 
-  end
+  #end
 
 end

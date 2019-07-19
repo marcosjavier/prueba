@@ -62,7 +62,7 @@ class ServiceOrdersController < ApplicationController
 
   end
   def filter_by_date
-    @service_orders = ServiceOrder.filter(params[:search][:date_start],params[:search][:date_end])
+    @service_orders = ServiceOrder.created_between(params[:search][:date_start],params[:search][:date_end])
     #pry.binding
     respond_to do |format|
       format.js
