@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190710225401) do
+ActiveRecord::Schema.define(version: 20190719223950) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20190710225401) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "phone",      limit: 255
+  end
+
+  create_table "devices", force: :cascade do |t|
+    t.string   "type_of_device"
+    t.string   "observations"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.date     "admission_date"
+    t.date     "discharge_date"
   end
 
   create_table "maintenances", force: :cascade do |t|
@@ -35,21 +44,35 @@ ActiveRecord::Schema.define(version: 20190710225401) do
 
   add_index "maintenances", ["customer_id"], name: "index_maintenances_on_customer_id"
 
+  create_table "movements", force: :cascade do |t|
+    t.string   "work_done"
+    t.string   "computer_supplies"
+    t.string   "observations"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "service_order_id"
+  end
+
+  add_index "movements", ["service_order_id"], name: "index_movements_on_service_order_id"
+
   create_table "service_orders", force: :cascade do |t|
     t.date     "last_move_date_at"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "customer_id"
-    t.integer  "state_id"
+    t.string   "reported_problem"
+    t.integer  "status_id"
+    t.integer  "device_id"
   end
 
   add_index "service_orders", ["customer_id"], name: "index_service_orders_on_customer_id"
-  add_index "service_orders", ["state_id"], name: "index_service_orders_on_state_id"
+  add_index "service_orders", ["device_id"], name: "index_service_orders_on_device_id"
+  add_index "service_orders", ["status_id"], name: "index_service_orders_on_status_id"
 
-  create_table "states", force: :cascade do |t|
-    t.string   "state",      limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "statuses", force: :cascade do |t|
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
