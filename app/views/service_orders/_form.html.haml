@@ -1,5 +1,7 @@
 = simple_form_for service_order, remote: true do |f|
   = f.input :created_at, as: :date, html5: true
-  = f.association :state, label_method: :state, value_method: :id
-  = f.association :customer, as: :select
+  = f.input :reported_problem
+  = f.association :customer, as: :select  
+  = f.association :status, label_method: :description, value_method: :id
+  = f.association :device, as: :select, label_method: :id
   = f.submit 'guardar'

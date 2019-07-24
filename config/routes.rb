@@ -7,11 +7,12 @@ Rails.application.routes.draw do
       get 'service_orders_list'
     end
   end
-  resources :service_orders do
+  resources :service_orders do    
     collection do
       get 'filter_by_date'
       post 'filter_by_date', defaults: {format: :js}
     end
+    resources :movements
   end
 
   resources :maintenances do
@@ -19,10 +20,7 @@ Rails.application.routes.draw do
       get 'pending'
     end
   end
-  
-
-
-
+  resources :devices
 
 
   get 'welcome/index'

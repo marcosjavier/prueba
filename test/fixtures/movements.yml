@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  work_done: MyString
+  computer_supplies: MyString
+  observations: MyString
+
+two:
+  work_done: MyString
+  computer_supplies: MyString
+  observations: MyString
