@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20190724234227) do
 
+
   create_table "customers", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "surname",    limit: 255
@@ -23,6 +24,15 @@ ActiveRecord::Schema.define(version: 20190724234227) do
     t.string   "phone",      limit: 255
     t.float    "latitude"
     t.float    "longitude"
+  end
+
+  create_table "devices", force: :cascade do |t|
+    t.string   "type_of_device"
+    t.string   "observations"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.date     "admission_date"
+    t.date     "discharge_date"
   end
 
   create_table "devices", force: :cascade do |t|

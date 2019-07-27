@@ -1,0 +1,29 @@
+.row
+  .col-md-12
+    .card
+      .card-header{"data-background-color" => "red"}
+        %h4.title
+          = t('.listing_devices')
+        %p.category
+          = t('.listing_devices')
+      .card-content.table-responsive
+        %table.table
+          %thead.text-primary
+            %tr
+              %th= t('.id')
+              %th= t('.type_of_device')
+              %th= t('.observations')
+              %th= t('.admission_date')
+              %th= t('.discharge_date') 
+              
+              
+          - @devices.each do |dev|
+            %tbody
+              %tr
+                %td= dev.id
+                %td= dev.type_of_device
+                %td= dev.observations
+                %td= dev.admission_date
+                %td= dev.discharge_date
+                %td= link_to t('.edit'), edit_device_path(dev), remote: true
+                

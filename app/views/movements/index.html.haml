@@ -1,0 +1,19 @@
+.row
+	.col-md-12		
+		= link_to 'Atras', service_orders_path
+		Orden de servicio n°
+		= @service_order.id
+		.card
+			.card-header{"data-background-color" => "red"}
+				%h4.title
+					= t('.movements_list')
+			.card-content.table-responsive
+				%table.table	
+					%thead.text-primary
+						%tr
+							%th= t('.id')
+							%th= t('work_done')
+							%th= t('computer_supplies')
+							%th= t('observations')
+					%tbody				
+						= render 'movements_table', movements: @movements

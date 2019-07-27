@@ -3,8 +3,9 @@ class ServiceOrdersController < ApplicationController
 
   def index
     @service_orders = ServiceOrder.all
-    @service_order = ServiceOrder.new
+    @service_order = ServiceOrder.new    
     @service_order_pending = ServiceOrder.pending
+    
     
     respond_to do |format|
       format.html
@@ -22,11 +23,13 @@ class ServiceOrdersController < ApplicationController
 
   def new
     @service_order = ServiceOrder.new(created_at: Time.zone.today)
+        
+    #binding.pry
   end
 
   def create
-    @service_order = ServiceOrder.create(service_order_params)
-    #@service_order.save
+    @service_order = ServiceOrder.create(service_order_params)    
+
     respond_to do |format|
       #format.html do
       #  redirect_to @service_order,
@@ -69,16 +72,21 @@ class ServiceOrdersController < ApplicationController
     end
   end
 
+  
+
   private
 
   	def service_order_params
   		params.require(:service_order).permit(
   		:created_at,
   		:last_move_date_at,
-  		:state_id,
+  		:status_id,
   		:customer_id,
       :date_start,
-      :date_end)
+      :date_end,
+      :reported_problem,
+      :device_id      
+      )
 
   	end
 
@@ -86,6 +94,15 @@ class ServiceOrdersController < ApplicationController
       @service_order = ServiceOrder.find(params[:id])
 
     end
+    #def device_params
+    #  params.require(:device).permit(
+    #    :type_of_device,
+    #    :observations,
+    #    :admission_date,
+    #    :discharge_date
+    #  )
+
+    #end
 
 
 end
