@@ -5,6 +5,7 @@
 	validates :phone, numericality: { only_integer: true }
 	has_many :service_orders, dependent: :restrict_with_error
 	has_many :maintenances
+	geocoded_by :address
 	
 	
 end
