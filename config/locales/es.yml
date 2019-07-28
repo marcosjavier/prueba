@@ -46,6 +46,7 @@ es:
       user: Usuario
   cancel: Cancelar
   common: Common
+  computer_supplies: Insumos informáticos
   customers:
     customer_service_orders:
       creation_date: Fecha de Creación
@@ -70,6 +71,21 @@ es:
     show:
       new_customer: Nuevo Cliente
       view_customer: Ver Cliente
+  devices:
+    edit:
+      edit_device: Editar Dispositivo
+    index:
+      admission_date: Fecha de Adimisión
+      discharge_date: Fecha de Salida Taller
+      edit: Editar
+      id: Id
+      listing_devices: Listado de Dispositivos
+      observations: Observaciones
+      type_of_device: Tipo de Dispositivo
+    new:
+      new_device: Nuevo Dispositivo
+    show:
+      view_device: Mostrar Dispositivo
   devise:
     failure:
       user:
@@ -82,9 +98,12 @@ es:
   layouts:
     navigation:
       sidebar:
-        maintenance_list: Maintenance list
-        maintenance_list_pending: Maintenance list pending
-        new_maintenance: New maintenance
+        devices_list: Lista de Dispositivos
+        maintenance_list: Lista de Mantenimientos
+        maintenance_list_pending: Lista de Mantenimientos pendientes
+        maintenances_list: Lista de Mantenimientos
+        new_device: Nuevo Dispositivo
+        new_maintenance: Nuevo Mantenimiento
   maintenances:
     index:
       customer: Cliente
@@ -102,9 +121,19 @@ es:
       observations: Observaciones
       pending_date: Fecha de Mantenimiento Pendiente
       status: Estado
+  movements:
+    index:
+      computer_supplies: Insumos informáticos
+      id: Id
+      movements_list: Lista de Movimientos
+      observations: Observaciones
+      work_done: Trabajo Realizado
+    new:
+      new_movement: Nuevo Movimiento
+  observations: Observaciones
   service_orders:
     create:
-      a new service order has been created: A new service order has been created
+      a new service order has been created: Una Nueva Orden de Servicios a sido creada
     edit:
       edit_service_order: Editar Orden de Servicio
     index:
@@ -115,12 +144,18 @@ es:
       actual_state: Estado Actual
       creation_date: Fecha de Creación
       customer: Cliente
+      delete: Eliminar
+      device: Dispositivo
+      edit: Editar
       id: Id
       last_move_date: Fecha de último movimiento
-      state: State
+      movements: Movimientos
+      state: Stado
+      view: Vista
   welcome:
     pending_maintenances:
       customer: Cliente
+      edit: Editar
       id: Id
       maintenance_date_made: Fecha de Mantenimiento Realizado
       observations: Observaciones
@@ -131,3 +166,4 @@ es:
       creation_date: Fecha de Creacion
       id: Id
       last_move_date: Fecha de ultimo Movimiento
+  work_done: Trabajo Realizado

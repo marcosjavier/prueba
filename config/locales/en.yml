@@ -46,6 +46,7 @@ en:
       user: Usuario
   cancel: Cancelar
   common: Common
+  computer_supplies: Computer supplies
   customers:
     customer_service_orders:
       creation_date: Creation date
@@ -70,6 +71,21 @@ en:
     show:
       new_customer: New customer
       view_customer: Ver Cliente
+  devices:
+    edit:
+      edit_device: Edit device
+    index:
+      admission_date: Admission date
+      discharge_date: Discharge date
+      edit: Edit
+      id: Id
+      listing_devices: Listing devices
+      observations: Observations
+      type_of_device: Type of device
+    new:
+      new_device: New device
+    show:
+      view_device: View device
   devise:
     failure:
       user:
@@ -82,8 +98,11 @@ en:
   layouts:
     navigation:
       sidebar:
+        devices_list: Devices list
         maintenance_list: Maintenance list
         maintenance_list_pending: Maintenance list pending
+        maintenances_list: Maintenances list
+        new_device: New device
         new_maintenance: New maintenance
   maintenances:
     index:
@@ -102,6 +121,16 @@ en:
       observations: Observations
       pending_date: Pending date
       status: Status
+  movements:
+    index:
+      computer_supplies: Computer supplies
+      id: Id
+      movements_list: Movements list
+      observations: Observations
+      work_done: Work done
+    new:
+      new_movement: New movement
+  observations: Observations
   service_orders:
     create:
       a new service order has been created: A new service order has been created
@@ -115,12 +144,18 @@ en:
       actual_state: Estado Actual
       creation_date: Creation date
       customer: Customer
+      delete: Delete
+      device: Device
+      edit: Edit
       id: Id
       last_move_date: Last move date
+      movements: Movements
       state: State
+      view: View
   welcome:
     pending_maintenances:
       customer: Customer
+      edit: Edit
       id: Id
       maintenance_date_made: Maintenance date made
       observations: Observations
@@ -131,3 +166,4 @@ en:
       creation_date: Creation date
       id: Id
       last_move_date: Last move date
+  work_done: Work done

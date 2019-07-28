@@ -3,9 +3,7 @@
     %th= t('.id')
     %th= t('.creation_date')
     %th= t('.last_move_date')
-    %th= t('.actual_state')
-    %th= t('.customer')
-    %th= t('.device')
+    %th= t('.actual_state')    
   - service_orders.each do |os|
     %tr
       %td
@@ -17,13 +15,13 @@
       %td
         = os.status.description if os.status.present?
       %td
-        = link_to "View", customer_path(os.customer.id), remote: true
+        = link_to t('.customer'), customer_path(os.customer), remote: true
       %td
-        = link_to "Device", device_path(os.device.id), remote: true, class: "btn btn-primary" if os.device.present?
+        = link_to t('.device'), device_path(os.device), remote: true if os.device.present?
       %td
-        = link_to "Delete ", service_order_path(os.id), method: :delete, data: {confirm: 'Esta seguro de eliminar este registro??'}
+        = link_to t('.delete'), service_order_path(os.id), method: :delete, data: {confirm: 'Esta seguro de eliminar este registro??'}
       %td
-        = link_to "Edit", edit_service_order_path(os.id), remote: true
+        = link_to t('.edit'), edit_service_order_path(os.id), remote: true
       %td
-        = link_to "Agregar Movimiento" , service_order_movements_path(os.id)
+        = link_to t('.movements') , service_order_movements_path(os.id)
       
