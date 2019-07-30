@@ -2,7 +2,7 @@ class DevicesController < ApplicationController
 	before_action :set_devise, only: [:show, :edit, :update, :destroy]
 
 	def index
-    @devices = Device.all
+    @devices = Device.all.order(:id).page params[:page]
   end
 
   def new

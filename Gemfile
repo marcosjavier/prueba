@@ -60,3 +60,5 @@ gem 'bourbon'
 
 #geocoder gem
 gem 'geocoder'
+#gem to handle pagination
+gem 'kaminari'

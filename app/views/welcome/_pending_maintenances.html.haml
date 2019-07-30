@@ -7,12 +7,14 @@
 		%th= t('.status')
 		%th= t('.customer')
 	- pending_maintenances.each do |pending|
-
-		%td= pending.id
-		%td= pending.observations
-		%td= pending.pending_date
-		%td= pending.maintenance_date_made
-		%td= pending[:status]
-		%td= pending.customer.name
-		%td= link_to t('.edit'), edit_maintenance_path(pending.id)
-	
+		%tr
+			%td= pending.id
+			%td= pending.observations
+			%td= pending.pending_date
+			%td= pending.maintenance_date_made
+			%td= pending[:status]
+			%td= pending.customer.name
+			%td= link_to t('.edit'), edit_maintenance_path(pending.id)
+%br
+= paginate pending_maintenances
+%br

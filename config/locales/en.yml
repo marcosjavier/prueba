@@ -21,9 +21,12 @@ en:
       service_order:
         creation_date_at: Fecha de creacion
         customer: Cliente
+        device: Dispositivo
         id: ID
         last_move_date_at: Fecha de ultimo movimiento
+        reported_problem: Problema reportado
         state: Estado
+        status: Estado
       user:
         available_gyms: Gimnasios disponibles
         email: Correo Electrónico
@@ -95,6 +98,9 @@ en:
       user:
         signed_in: Usuario registrado
   hello: Hello world
+  kaminari:
+    first_page:
+      first: First
   layouts:
     navigation:
       sidebar:
@@ -134,14 +140,21 @@ en:
   service_orders:
     create:
       a new service order has been created: A new service order has been created
+    customer_service_orders:
+      creation_date: Creation date
+      id: Id
+      last_move_date: Last move date
+      status: Status
     edit:
       edit_service_order: Edit service order
     index:
       Listing_Service_Orders: Listing service orders
+      service_orders: Service orders
     new:
       new_service_order: New service order
     service_order_table:
       actual_state: Estado Actual
+      closed: Cerrado
       creation_date: Creation date
       customer: Customer
       delete: Delete
@@ -150,8 +163,16 @@ en:
       id: Id
       last_move_date: Last move date
       movements: Movements
+      opened: Abierto
       state: State
       view: View
+  views:
+    pagination:
+      first: First
+      last: Last
+      next: Next
+      previous: Previous
+      truncate: Truncate
   welcome:
     pending_maintenances:
       customer: Customer

@@ -26,4 +26,5 @@
                 %td= dev.admission_date
                 %td= dev.discharge_date
                 %td= link_to t('.edit'), edit_device_path(dev), remote: true
+        = paginate @devices
                 

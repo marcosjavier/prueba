@@ -31,7 +31,8 @@
                 %td
                   = link_to 'Delete', customer_path(c.id), method: :delete, data: { confirm: '¿Está seguro de querer borrar este registro?'}
                 %td
-                  = link_to 'Ordenes de Servicios', service_orders_list_customer_path(c.id), remote: true
+                  = link_to 'Ordenes de Servicios', customer_service_orders_path(c.id), remote: true
+        = paginate @customers
 
   = link_to 'Agregar Cliente', new_customer_path, remote: true
   

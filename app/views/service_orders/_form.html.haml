@@ -1,4 +1,4 @@
-= simple_form_for service_order do |f|
+= simple_form_for service_order, remote: true do |f|
   = f.input :created_at, as: :date, html5: true
   = f.input :reported_problem
   = f.association :customer, as: :select  

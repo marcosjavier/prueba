@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: "sessions"}
   root 'welcome#index'
   resources :customers do
-    member do
-      get 'service_orders_list'
-    end
+    resources :service_orders
   end
   resources :service_orders do    
     collection do

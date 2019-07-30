@@ -1,7 +1,7 @@
 class MaintenancesController < ApplicationController
 	before_action :set_maintenance, only: [:show, :edit, :update]
 	def index
-		@maintenances = Maintenance.all
+		@maintenances = Maintenance.all.order(:id).page params[:page]
 		
 	end
 	def new

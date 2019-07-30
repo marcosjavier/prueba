@@ -2,14 +2,20 @@ class ServiceOrdersController < ApplicationController
   before_action :set_service_order, only: [:show, :destroy, :edit, :update]
 
   def index
-    @service_orders = ServiceOrder.all
-    @service_order = ServiceOrder.new    
-    @service_order_pending = ServiceOrder.pending
+    if params[:customer_id]
+      set_customer
+      @service_orders = @customer.service_orders.order(:id).page params[:page]
+
+    else
+      @service_orders = ServiceOrder.order(:id).page params[:page]
+      @service_order = ServiceOrder.new    
+      @service_order_pending = ServiceOrder.pending
+    end
     
     
     respond_to do |format|
       format.html
-      format.json
+      format.js
       format.pdf { render template: 'service_orders/report', pdf: 'report'}
     end
   end
@@ -52,6 +58,7 @@ class ServiceOrdersController < ApplicationController
   end
   def update
     @service_order.update(service_order_params)
+    
     respond_to do |format|
       format.js
     end
@@ -92,17 +99,11 @@ class ServiceOrdersController < ApplicationController
 
     def set_service_order
       @service_order = ServiceOrder.find(params[:id])
-
     end
-    #def device_params
-    #  params.require(:device).permit(
-    #    :type_of_device,
-    #    :observations,
-    #    :admission_date,
-    #    :discharge_date
-    #  )
 
-    #end
+    def set_customer
+      @customer = Customer.find params[:customer_id]
+    end
 
 
 end

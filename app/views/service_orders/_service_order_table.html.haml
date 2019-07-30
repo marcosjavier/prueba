@@ -6,22 +6,15 @@
     %th= t('.actual_state')    
   - service_orders.each do |os|
     %tr
-      %td
-        = os.id
-      %td
-        = os.created_at.strftime('%d-%m-%Y')
-      %td
-        = os.updated_at.strftime('%d-%m-%Y')
-      %td
-        = os.status.description if os.status.present?
-      %td
-        = link_to t('.customer'), customer_path(os.customer), remote: true
-      %td
-        = link_to t('.device'), device_path(os.device), remote: true if os.device.present?
-      %td
-        = link_to t('.delete'), service_order_path(os.id), method: :delete, data: {confirm: 'Esta seguro de eliminar este registro??'}
-      %td
-        = link_to t('.edit'), edit_service_order_path(os.id), remote: true
-      %td
-        = link_to t('.movements') , service_order_movements_path(os.id)
+      %td= os.id
+      %td= os.created_at.strftime('%d-%m-%Y')
+      %td= os.updated_at.strftime('%d-%m-%Y')
+      %td= t(".#{os.status.description}") if os.status.present?
+      %td= link_to t('.customer'), customer_path(os.customer), remote: true
+      %td= link_to t('.device'), device_path(os.device), remote: true if os.device.present?
+      %td= link_to t('.delete'), service_order_path(os.id), method: :delete, data: {confirm: 'Esta seguro de eliminar este registro??'}
+      %td= link_to t('.edit'), edit_service_order_path(os.id), remote: true
+      %td= link_to t('.movements') , service_order_movements_path(os.id)
+= paginate service_orders
+%br
       
