@@ -1,5 +1,5 @@
 class Device < ActiveRecord::Base
-	has_many :service_orders
+	belongs_to :service_order
 	
 	enum type_of_device: {
 		router: "router",

@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190724234227) do
-
+ActiveRecord::Schema.define(version: 20190731112932) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -29,20 +28,14 @@ ActiveRecord::Schema.define(version: 20190724234227) do
   create_table "devices", force: :cascade do |t|
     t.string   "type_of_device"
     t.string   "observations"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.date     "admission_date"
     t.date     "discharge_date"
+    t.integer  "service_order_id"
   end
 
-  create_table "devices", force: :cascade do |t|
-    t.string   "type_of_device"
-    t.string   "observations"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.date     "admission_date"
-    t.date     "discharge_date"
-  end
+  add_index "devices", ["service_order_id"], name: "index_devices_on_service_order_id"
 
   create_table "maintenances", force: :cascade do |t|
     t.string   "observations"
@@ -74,11 +67,9 @@ ActiveRecord::Schema.define(version: 20190724234227) do
     t.integer  "customer_id"
     t.string   "reported_problem"
     t.integer  "status_id"
-    t.integer  "device_id"
   end
 
   add_index "service_orders", ["customer_id"], name: "index_service_orders_on_customer_id"
-  add_index "service_orders", ["device_id"], name: "index_service_orders_on_device_id"
   add_index "service_orders", ["status_id"], name: "index_service_orders_on_status_id"
 
   create_table "statuses", force: :cascade do |t|

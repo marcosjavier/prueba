@@ -1,14 +1,16 @@
 class DevicesController < ApplicationController
-	before_action :set_devise, only: [:show, :edit, :update, :destroy]
+	before_action :set_device, only: [:show, :edit, :update, :destroy]
+	before_action :set_service_order, only: [:new, :create]
 
 	def index
     @devices = Device.all.order(:id).page params[:page]
   end
 
   def new
-    @device = Device.new
+    @device = Device.new(service_order_id: @service_order.id)
+    #binding.pry
     respond_to do |format|
-      format.html
+      #format.html
       format.js
     end
   end
@@ -21,6 +23,7 @@ class DevicesController < ApplicationController
 
   def create
   	@device = Device.new(device_params)
+  	@service_order.device = @device
   	#binding.pry
   	
   	if @device.save
@@ -56,8 +59,13 @@ class DevicesController < ApplicationController
 
     end
 
-    def set_devise
+    def set_device
       @device = Device.find(params[:id])
+    end
+
+    def set_service_order
+    	@service_order = ServiceOrder.find(params[:service_order_id])
+    	#binding.pry
     end
 
 end

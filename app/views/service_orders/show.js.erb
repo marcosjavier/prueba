@@ -1,10 +1,1 @@
-$("#{escape_javascript('<td> <%= os.id}
-%td
-  = os.creation_date_at
-%td
-  = os.last_move_date_at
-%td
-  = os.estate
-= succeed ")" do
-  %td
-    = os.customer_id
+$("<%=j modal_bootstrap(render('form', service_order: @service_order), title: t('.show_service_order')) %> ").modal().show();

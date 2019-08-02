@@ -3,5 +3,5 @@
   = f.input :reported_problem
   = f.association :customer, as: :select  
   = f.association :status, label_method: :description, value_method: :id
-  = f.association :device, as: :select, label_method: :id
+  = f.association :movements  
   = f.submit 'guardar'

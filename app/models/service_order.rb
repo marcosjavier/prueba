@@ -4,7 +4,7 @@ class ServiceOrder < ActiveRecord::Base
   before_create :set_fields
 	belongs_to :customer
 	belongs_to :status
-	belongs_to :device
+	has_one :device
 	has_many :movements
 	
 	

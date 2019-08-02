@@ -23,8 +23,9 @@
                 %td= dev.id
                 %td= dev.type_of_device
                 %td= dev.observations
-                %td= dev.admission_date
-                %td= dev.discharge_date
+                %td= dev.admission_date.strftime("%d-%m-%Y")
+                %td= dev.discharge_date.strftime("%d-%m-%Y") if dev.discharge_date.present?
                 %td= link_to t('.edit'), edit_device_path(dev), remote: true
+                %td= link_to t('.service_order'), service_order_path(dev.service_order), remote: true
         = paginate @devices
                 

@@ -1,4 +1,4 @@
-= simple_form_for [service_order, device], url: service_order_device_path do |f|
+= simple_form_for device , remote: true do |f|
 	= f.input :type_of_device, collection: Device.type_of_devices.keys
 	= f.input :observations
 	= f.input :admission_date, as: :date, html5: true

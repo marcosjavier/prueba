@@ -33,6 +33,11 @@ es:
         full_name: Nombre completo
         password: Contraseña
         password_confirmation: Confirmar Contraseña
+      device:
+        type_of_device: Tipo de Dispositivo
+        observations: Observaciones
+        admission_date: Fecha de Adimisión
+        discharge_date: Fecha de Salida
     errors:
       models:
         customer:
@@ -85,6 +90,8 @@ es:
       listing_devices: Listado de Dispositivos
       observations: Observaciones
       type_of_device: Tipo de Dispositivo
+      service_order: Orden de Servicio
+
     new:
       new_device: Nuevo Dispositivo
     show:

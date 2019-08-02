@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       post 'filter_by_date', defaults: {format: :js}
     end
     resources :movements
+    resource :device
   end
 
   resources :maintenances do
