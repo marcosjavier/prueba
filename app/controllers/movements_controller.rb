@@ -3,7 +3,7 @@ class MovementsController < ApplicationController
 	before_action :set_service_order, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
 	def index
-    @movements = @service_order.movements
+    @movements = @service_order.movements#order(:id).page params[:page]
   end
 
   def new

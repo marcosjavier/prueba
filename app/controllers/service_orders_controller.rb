@@ -1,12 +1,17 @@
 class ServiceOrdersController < ApplicationController
   before_action :set_service_order, only: [:show, :destroy, :edit, :update]
+  protect_from_forgery except: :filter_by_date
 
   def index
+    #ordenes de servicio de un determinado cliente
     if params[:customer_id]
       set_customer
       @service_orders = @customer.service_orders.order(:id).page params[:page]
 
+    #elsif params[:search]
+      # @service_orders = ServiceOrder.created_between(params[:search][:date_start],params[:search][:date_end]).order(:id).page params[:page]
     else
+
       @service_orders = ServiceOrder.order(:id).page params[:page]
       @service_order = ServiceOrder.new    
       @service_order_pending = ServiceOrder.pending
@@ -28,9 +33,8 @@ class ServiceOrdersController < ApplicationController
   end
 
   def new
-    @service_order = ServiceOrder.new(created_at: Time.zone.today)
-        
-    #binding.pry
+    @service_order = ServiceOrder.new(created_at: Time.zone.today)        
+    
   end
 
   def create
@@ -73,7 +77,8 @@ class ServiceOrdersController < ApplicationController
   end
   def filter_by_date
     @service_orders = ServiceOrder.created_between(params[:search][:date_start],params[:search][:date_end])
-    #pry.binding
+    .order(:id).page params[:page]
+        
     respond_to do |format|
       format.js
     end

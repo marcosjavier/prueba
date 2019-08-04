@@ -19,6 +19,7 @@
       %td= link_to t('.edit'), edit_service_order_path(os.id), remote: true
        
       %td= link_to t('.movements') , service_order_movements_path(os.id)
-= paginate service_orders
-%br
+#paginator
+  = paginate service_orders
+  %br
       
