@@ -12,6 +12,11 @@ en:
         surname: Apellido
         tradename: Razon Social
         updated_at: Actualizado
+      device:
+        admission_date: Fecha de Adimisión
+        discharge_date: Fecha de Salida
+        observations: Observaciones
+        type_of_device: Tipo de Dispositivo
       maintenance:
         customer: Cliente
         maintenance_date_made: Fecha de trabajo hecho
@@ -84,6 +89,7 @@ en:
       id: Id
       listing_devices: Listing devices
       observations: Observations
+      service_order: Orden de Servicio
       type_of_device: Type of device
     new:
       new_device: New device
@@ -154,6 +160,7 @@ en:
       new_service_order: New service order
     service_order_table:
       actual_state: Estado Actual
+      add_device: Add device
       closed: Cerrado
       creation_date: Creation date
       customer: Customer
@@ -166,6 +173,8 @@ en:
       opened: Abierto
       state: State
       view: View
+    show:
+      show_service_order: Show service order
   views:
     pagination:
       first: First
@@ -187,4 +196,5 @@ en:
       creation_date: Creation date
       id: Id
       last_move_date: Last move date
+      opened: Abierto
   work_done: Work done

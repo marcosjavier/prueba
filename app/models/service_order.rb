@@ -1,6 +1,8 @@
 class ServiceOrder < ActiveRecord::Base
   scope :pending, -> { where(status_id: 1)}
 	scope :created_between, ->(date_start,date_end) { where(created_at: date_start..date_end) }
+	scope :opened, -> { where("status_id = 1")}
+	scope :closed, -> { where("status_id = 2")}
   before_create :set_fields
 	belongs_to :customer
 	belongs_to :status

@@ -12,6 +12,11 @@ es:
         surname: Apellido
         tradename: Razón Social
         updated_at: Actualizado
+      device:
+        admission_date: Fecha de Adimisión
+        discharge_date: Fecha de Salida
+        observations: Observaciones
+        type_of_device: Tipo de Dispositivo
       maintenance:
         customer: Cliente
         maintenance_date_made: Fecha de trabajo Realizado
@@ -33,11 +38,6 @@ es:
         full_name: Nombre completo
         password: Contraseña
         password_confirmation: Confirmar Contraseña
-      device:
-        type_of_device: Tipo de Dispositivo
-        observations: Observaciones
-        admission_date: Fecha de Adimisión
-        discharge_date: Fecha de Salida
     errors:
       models:
         customer:
@@ -89,9 +89,8 @@ es:
       id: Id
       listing_devices: Listado de Dispositivos
       observations: Observaciones
-      type_of_device: Tipo de Dispositivo
       service_order: Orden de Servicio
-
+      type_of_device: Tipo de Dispositivo
     new:
       new_device: Nuevo Dispositivo
     show:
@@ -161,6 +160,8 @@ es:
       new_service_order: Nueva Orden de Servicio
     service_order_table:
       actual_state: Estado Actual
+      add_device: Agregar Dispositivo
+      closed: Cerrado
       creation_date: Fecha de Creación
       customer: Cliente
       delete: Eliminar
@@ -169,10 +170,11 @@ es:
       id: Id
       last_move_date: Fecha de último movimiento
       movements: Movimientos
+      opened: Abierto
       state: Estado
       view: View
-      opened: Abierto
-      closed: Cerrado
+    show:
+      show_service_order: Orden de Servicio
   views:
     pagination:
       first: Primero

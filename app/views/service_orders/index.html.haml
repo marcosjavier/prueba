@@ -9,7 +9,9 @@
       = simple_form_for :search, url: filter_by_date_service_orders_path, method: :get, remote: true do |f|
         = f.input :date_start, as: :date, input_html: { value: Date.today }, html5: true, :wrapper_html => { :style => 'display: inline'}
         = f.input :date_end, as: :date, input_html: { value: Date.today }, html5: true, :wrapper_html => { :style => 'display: inline'}
+        = f.select :status, Status.all.map { |s| [s.description]}, include_blank: false
         = f.submit "buscar"
+
 .card#table
   =render 'service_order_table', service_orders: @service_orders
   = link_to "Agregar nueva orden servicios", new_service_order_path, remote: true, class: "btn btn-primary"
