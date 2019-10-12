@@ -1,3 +1,5 @@
+= t('.for_service_order')
+= service_order.id
 = simple_form_for [service_order, device], url: service_order_device_path do |f|
 	= f.input :type_of_device, collection: Device.type_of_devices.keys
 	= f.input :observations

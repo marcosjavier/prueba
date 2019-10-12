@@ -6,7 +6,7 @@
   .col-md-3    
     .content
     #search
-      = simple_form_for :search, url: filter_by_date_service_orders_path, method: :get, remote: true do |f|
+      = simple_form_for :search, url: filter_by_date_service_orders_path, method: :get, html: {class: 'form-inline'}, remote: true do |f|
         = f.input :date_start, as: :date, input_html: { value: Date.today }, html5: true, :wrapper_html => { :style => 'display: inline'}
         = f.input :date_end, as: :date, input_html: { value: Date.today }, html5: true, :wrapper_html => { :style => 'display: inline'}
         = f.select :status, Status.all.map { |s| [s.description]}, include_blank: false

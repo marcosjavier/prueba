@@ -1,3 +1,5 @@
+= t('.for_service_order')
+= service_order.id
 = simple_form_for [service_order, movement], remote: true do |f|
 	= f.input :work_done
 	= f.input :computer_supplies

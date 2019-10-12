@@ -1,7 +1,12 @@
 = simple_form_for service_order, remote: true do |f|
-  = f.input :created_at, as: :date, html5: true
-  = f.input :reported_problem
-  = f.association :customer, as: :select  
-  = f.association :status, label_method: :description, value_method: :id
-  = f.association :movements  
-  = f.submit 'guardar'
+	= f.input :created_at, as: :date, html5: true
+	= f.input :reported_problem
+	= f.association :customer, as: :select
+	- unless service_order.new_record?
+		= f.association :status, label_method: :description, value_method: :id
+	-else
+		= f.association :status, as: :hidden, input_html: { value:  1 }
+	- unless service_order.new_record?
+		= link_to 'Agregar Movimietos', new_service_order_movement_path(service_order.id), remote: true
+		%br    
+	= f.submit 'guardar'

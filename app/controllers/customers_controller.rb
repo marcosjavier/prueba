@@ -2,7 +2,22 @@ class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy, :service_orders_list]
 
   def index
-    @customers = Customer.all.order(:id).page params[:page]
+    if params[:search]
+      name = params[:search][:name]
+      @customers = Customer.search(name).order(:id).page params[:page] 
+    elsif params[:term]
+      name = params[:term]
+      @customers = Customer.search_name(name)
+      #binding.pry
+    else
+      @customers = Customer.all.order(:id).page params[:page]
+    end
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @customers}
+    end
+    
   end
 
   def new
@@ -12,7 +27,13 @@ class CustomersController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    respond_to do |format|
+      format.html
+      format.js
+      format.json { render json: @customer}
+    end
+   end
 
   def create
     @customer = Customer.new(customer_params)

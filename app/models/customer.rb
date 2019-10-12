@@ -6,6 +6,20 @@
 	has_many :service_orders, dependent: :restrict_with_error
 	has_many :maintenances
 	geocoded_by :address
+
+	def self.search(search_field)
+		Customer.where("lower(name) LIKE ?", "%#{search_field.downcase}%")
+		
+	end
+
+	def self.search_name(name_field)
+		@customers = Customer.where("lower(name) LIKE ?", "%#{name_field.downcase}%")
+		names = @customers.select(:name)
+		names = names.map(&:name)
+	end
+			
+	
+	
 	
 	
 end

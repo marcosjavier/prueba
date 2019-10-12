@@ -1,4 +1,13 @@
 .row
+  %h4 Búsqueda por Nombre     
+  #search.ui-widget
+    = simple_form_for :search, method: :get, html: {class: 'form-inline'} do |f|        
+      = f.input :name, label: false, input_html: {placeholder: 'Ingrese Nombre'}
+      = f.submit 'Buscar'
+  #back
+    = link_to t('.back'), customers_path
+
+.row
   .col-md-12
     .card
       .card-header{"data-background-color" => "red"}
@@ -36,3 +45,27 @@
 
   = link_to 'Agregar Cliente', new_customer_path, remote: true
   
+:javascript
+  $(document).ready( function(){
+    
+  //      $.get('/customers/2',          
+  //        function(datos) {
+  //        alert('Respuest = '+datos.name)
+  //       }, "json")
+    $("#search_name").autocomplete({
+      source: "/customers",
+      //minLength: 2,
+    });
+  });
+    
+  //  $('#search_name').click( function()
+  //    {
+  //      var nombre = $(this);
+  //      $.get('/customers/2',          
+  //        function(datos) {
+  //        alert('Respuest = '+datos.name)
+  //       }, "json")
+  //    }); 
+  
+  //alert(mensaje);
+  //});

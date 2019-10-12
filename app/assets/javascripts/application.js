@@ -12,6 +12,7 @@
 //
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 // require jquery3
 //= require bootstrap
