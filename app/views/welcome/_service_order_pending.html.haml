@@ -5,12 +5,14 @@
 		%th= t('.last_move_date')
 		%th= t('.actual_state')
 		
+		
 	- pending_service_orders.each do |os|
 		%tr
 			%td= os.id
 			%td= os.created_at.strftime('%d-%m-%Y')
 			%td= os.updated_at.strftime('%d-%m-%Y')
 			%td= t(".#{os.status.description}")
+			%td= link_to t('.movements') , service_order_movements_path(os.id)
 			%td= link_to "Edit", edit_service_order_path(os.id), remote: true, class: "btn btn-primary"
 %br
 = paginate pending_service_orders

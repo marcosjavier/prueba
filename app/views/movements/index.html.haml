@@ -3,7 +3,7 @@
 		= link_to 'Atras', service_orders_path
 		Orden de servicio n°
 		= @service_order.id
-		= link_to 'Nuevo Movimiento', new_service_order_movement_path, remote: true
+		= link_to 'Nuevo Movimiento', new_service_order_movement_path, remote: true if @service_order.status.description != "closed"
 		.card
 			.card-header{"data-background-color" => "red"}
 				%h4.title
@@ -16,5 +16,6 @@
 							%th= t('.work_done')
 							%th= t('.computer_supplies')
 							%th= t('.observations')
+							%th= t('.device')
 					%tbody				
 						= render 'movements_table', movements: @movements

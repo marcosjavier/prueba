@@ -19,6 +19,13 @@ class ServiceOrder < ActiveRecord::Base
 
 	end
 
+	def get_last_date_of_movement
+		if movements.present?
+			movements.last.updated_at			
+		end	 
+		
+	end
+
   #def self.filter(date_start,date_end)
   #
   #  service_orders = ServiceOrder.where(created_at: date_start..date_end)

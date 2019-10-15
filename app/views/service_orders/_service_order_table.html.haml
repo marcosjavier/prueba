@@ -3,22 +3,27 @@
     %th= t('.id')
     %th= t('.creation_date')
     %th= t('.last_move_date')
-    %th= t('.actual_state')    
+    %th= t('.actual_state')
+    %br    
   - service_orders.each do |os|
     %tr
       %td= os.id
       %td= os.created_at.strftime('%d-%m-%Y')
-      %td= os.updated_at.strftime('%d-%m-%Y')
+      %td= os.get_last_date_of_movement.strftime('%d-%m-%Y') if os.movements.present?
       %td= t(".#{os.status.description}") if os.status.present?
       %td= link_to t('.customer'), customer_path(os.customer), remote: true
       -if os.device.present?
-        %td= link_to t('.device'), device_path(os.device), remote: true if os.device.present?
+        %td= link_to t('.device'), device_path(os.device), remote: true
       -else
         %td= link_to t('.add_device'), new_service_order_device_path(os) , remote: true
       %td= link_to t('.delete'), service_order_path(os.id), method: :delete, data: {confirm: 'Esta seguro de eliminar este registro??'}
       %td= link_to t('.edit'), edit_service_order_path(os.id), remote: true
-       
-      %td= link_to t('.movements') , service_order_movements_path(os.id)
+      -if os.device.present?
+        %td= link_to t('.movements') , service_order_movements_path(os.id)
+      -unless os.status.description == "closed" || os.device.nil?
+        %td= link_to 'Agregar Movimientos', new_service_order_movement_path(os.id), remote: true      
+
+      
 #paginator
   = paginate service_orders
   %br

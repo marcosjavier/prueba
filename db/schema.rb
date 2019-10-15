@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190731112932) do
+ActiveRecord::Schema.define(version: 20191014130126) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -56,8 +56,10 @@ ActiveRecord::Schema.define(version: 20190731112932) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.integer  "service_order_id"
+    t.integer  "device_id"
   end
 
+  add_index "movements", ["device_id"], name: "index_movements_on_device_id"
   add_index "movements", ["service_order_id"], name: "index_movements_on_service_order_id"
 
   create_table "service_orders", force: :cascade do |t|

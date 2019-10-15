@@ -13,7 +13,7 @@ es:
         tradename: Razón Social
         updated_at: Actualizado
       device:
-        admission_date: Fecha de Adimisión
+        admission_date: Fecha de Admisión
         discharge_date: Fecha de Salida
         observations: Observaciones
         type_of_device: Tipo de Dispositivo

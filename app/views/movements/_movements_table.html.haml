@@ -4,4 +4,6 @@
 		%td= movement.work_done
 		%td= movement.computer_supplies
 		%td= movement.observations
+		-if movement.device.present?
+			%td= link_to 'device', device_path(movement.device), remote: true
 		
