@@ -2,7 +2,14 @@ class PaymentsController < ApplicationController
 	#before_action :set_payment, only: :new
 
 	def index
-		@payments = Payment.all
+		if params[:service_order_id]
+			@payments = Payment.where service_order_id: params[:service_order_id]
+			respond_to do |format|
+				format.js
+			end
+		else
+			@payments = Payment.all
+		end
 		
 	end
 

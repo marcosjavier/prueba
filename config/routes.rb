@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     end
     resources :movements
     resource :device
+    resources :payments
   end
 
   resources :maintenances do

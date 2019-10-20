@@ -65,6 +65,7 @@ en:
       edit_customer: Editar Cliente
     index:
       address: Address
+      back: Back
       id: Id
       listing_customers: Listing customers
       name: Name
@@ -82,6 +83,8 @@ en:
   devices:
     edit:
       edit_device: Edit device
+    form:
+      for_service_order: For service order
     index:
       admission_date: Admission date
       discharge_date: Discharge date
@@ -93,6 +96,7 @@ en:
       type_of_device: Type of device
     new:
       new_device: New device
+      service_order: Service order
     show:
       view_device: View device
   devise:
@@ -116,6 +120,8 @@ en:
         maintenances_list: Maintenances list
         new_device: New device
         new_maintenance: New maintenance
+        new_payment: New payment
+        payments_list: Payments list
   maintenances:
     index:
       customer: Customer
@@ -134,8 +140,11 @@ en:
       pending_date: Pending date
       status: Status
   movements:
+    form:
+      for_service_order: For service order
     index:
       computer_supplies: Computer supplies
+      device: Device
       id: Id
       movements_list: Movements list
       observations: Observations
@@ -143,6 +152,15 @@ en:
     new:
       new_movement: New movement
   observations: Observations
+  payments:
+    index:
+      amount: Amount
+      description: Description
+      id: Id
+      listing_payments: Listing payments
+      payed_at: Payed at
+      payments_list: Payments list
+      service_order: Service order
   service_orders:
     create:
       a new service order has been created: A new service order has been created
@@ -161,6 +179,7 @@ en:
     service_order_table:
       actual_state: Estado Actual
       add_device: Add device
+      add_movement: Add movement
       closed: Cerrado
       creation_date: Creation date
       customer: Customer
@@ -171,6 +190,7 @@ en:
       last_move_date: Last move date
       movements: Movements
       opened: Abierto
+      payments: Pagos
       state: State
       view: View
     show:
@@ -196,5 +216,6 @@ en:
       creation_date: Creation date
       id: Id
       last_move_date: Last move date
+      movements: Movements
       opened: Abierto
   work_done: Work done

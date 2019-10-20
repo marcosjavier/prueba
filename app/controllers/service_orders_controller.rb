@@ -15,6 +15,7 @@ class ServiceOrdersController < ApplicationController
       @service_orders = ServiceOrder.order(:id).page params[:page]
       @service_order = ServiceOrder.new    
       @service_order_pending = ServiceOrder.pending
+      @service_order_payment = Payment.where service_order_id: params[:id]
     end
     
     
