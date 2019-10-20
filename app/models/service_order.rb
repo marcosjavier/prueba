@@ -8,6 +8,7 @@ class ServiceOrder < ActiveRecord::Base
 	belongs_to :status
 	has_one :device
 	has_many :movements
+	has_many :payments
 	
 	
 
@@ -25,6 +26,13 @@ class ServiceOrder < ActiveRecord::Base
 		end	 
 		
 	end
+
+	def get_status
+		self.status.description
+		
+	end
+
+	
 
   #def self.filter(date_start,date_end)
   #

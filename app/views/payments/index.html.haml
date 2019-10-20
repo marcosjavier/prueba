@@ -1,0 +1,26 @@
+.row
+  .col-md-12
+    .card
+      .card-header{"data-background-color" => "red"}
+        %h4.title
+          = t('.listing_payments')
+        %p.category
+          = t('.listing_payments')
+      .card-content.table-responsive
+        %table.table
+          %thead.text-primary
+            %tr
+              %th= t('.id')
+              %th= t('.amount')
+              %th= t('.description')
+              %th= t('.payed_at')
+              %th= t('.service_order')
+
+          -@payments.each do |payment|
+            %tbody
+              %tr
+                %td= payment.id
+                %td= payment.amount
+                %td= payment.description
+                %td= payment.payed_at.strftime('%d-%m-%Y')
+                %td= link_to 'Service Order',service_order_path(payment.service_order.id), remote: true

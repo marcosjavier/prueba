@@ -37,6 +37,17 @@
           %li
             %a{:href => new_device_path}
               = t('.new_device')
+      %li.dropdown{class: "#{'active' if params[:controller] == ('payments') }"}
+        %a{:href => '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' }
+          %i.ti-view-list-alt
+          %p Pagos
+        %ul.dropdown-menu        
+          %li
+            %a{:href => payments_path}
+              = t('.payments_list')
+          %li
+            %a{:href => new_payment_path}
+              = t('.new_payment')
           
      
 
