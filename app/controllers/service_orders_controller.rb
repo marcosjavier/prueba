@@ -103,6 +103,7 @@ class ServiceOrdersController < ApplicationController
   		params.require(:service_order).permit(
   		:created_at,
   		:last_move_date_at,
+      :cost,
   		:status_id,
   		:customer_id,
       :date_start,

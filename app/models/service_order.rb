@@ -9,6 +9,7 @@ class ServiceOrder < ActiveRecord::Base
 	has_one :device
 	has_many :movements
 	has_many :payments
+	monetize :cost_cents
 	
 	
 

@@ -2,6 +2,7 @@
 	= f.input :created_at, as: :date, html5: true
 	= f.input :reported_problem
 	= f.association :customer, as: :select
+	= f.input :cost
 	- unless service_order.new_record?
 		= f.association :status, label_method: :description, value_method: :id
 	-else

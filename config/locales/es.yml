@@ -154,13 +154,13 @@ es:
   observations: Observaciones
   payments:
     index:
-      amount: Amount
-      description: Description
+      amount: Monto
+      description: Descripción
       id: Id
-      listing_payments: Listing payments
-      payed_at: Payed at
+      listing_payments: Lista de Pagos
+      payed_at: Pagado el
       payments_list: Payments list
-      service_order: Service order
+      service_order: Orden de Servicio
   service_orders:
     create:
       a new service order has been created: Una Nueva Orden de Servicios a sido creada
@@ -177,17 +177,17 @@ es:
     new:
       new_service_order: Nueva Orden de Servicio
     service_order_table:
-      actual_state: Estado Actual
-      add_device: Agregar Dispositivo
-      add_movement: Agregar Movimiento
+      actual_state: Estado
+      add_device: Agregar Disp.
+      add_movement: Agregar Mov.
       closed: Cerrado
-      creation_date: Fecha de Creación
+      creation_date: Creación
       customer: Cliente
       delete: Eliminar
       device: Dispositivo
       edit: Editar
       id: Id
-      last_move_date: Fecha de último movimiento
+      last_move_date: Último mov.
       movements: Movimientos
       opened: Abierto
       payments: Pagos
