@@ -1,5 +1,5 @@
 = simple_form_for @payment do |f|
-	= f.input	:amount
+	= f.input	:amount	
 	= f.input :description
 	= f.input :payed_at, as: :date, html5: true
 	= f.association :service_order, collection: ServiceOrder.closed, label_method: :id

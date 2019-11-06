@@ -120,7 +120,7 @@ es:
         maintenances_list: Lista de Mantenimientos
         new_device: Nuevo Dispositivo
         new_maintenance: Nuevo Mantenimiento
-        new_payment: New payment
+        new_payment: Nuevo Pago
         payments_list: Lista de Pagos
   maintenances:
     index:
@@ -159,8 +159,9 @@ es:
       id: Id
       listing_payments: Lista de Pagos
       payed_at: Pagado el
-      payments_list: Payments list
+      payments_list: Lista de Pagos  de esta Orden Servicio
       service_order: Orden de Servicio
+      balance: Saldo
   service_orders:
     create:
       a new service order has been created: Una Nueva Orden de Servicios a sido creada

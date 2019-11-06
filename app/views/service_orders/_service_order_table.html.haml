@@ -5,7 +5,8 @@
     %th= t('.last_move_date')
     %th= t('.actual_state')
     %th= t('.cost')
-    %br    
+    
+
   - service_orders.each do |os|
     %tr
       %td= os.id
@@ -13,7 +14,16 @@
       %td= os.get_last_date_of_movement.strftime('%d-%m-%Y') if os.movements.present?
       %td= t(".#{os.status.description}") if os.status.present?
       %td= os.cost
-      %td= link_to t('.payments'), service_order_payments_path(os.id),remote: true
+      -if os.cost != 0
+        %td= link_to t('.payments'), service_order_payments_path(os.id),remote: true
+        -if os.payments.exists?
+          -if os.payments.last.balance != 0
+            %td= link_to t('.add_payment'), new_payment_path , remote: true
+          -else
+            %td
+        -else
+          %td= link_to t('.add_payment'), new_payment_path , remote: true
+
       %td= link_to t('.customer'), customer_path(os.customer), remote: true
       -if os.device.present?
         %td= link_to t('.device'), device_path(os.device), remote: true

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191021000335) do
+ActiveRecord::Schema.define(version: 20191021134907) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -71,6 +71,8 @@ ActiveRecord::Schema.define(version: 20191021000335) do
     t.integer  "service_order_id"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+    t.integer  "balance_cents",    default: 0,     null: false
+    t.string   "balance_currency", default: "USD", null: false
   end
 
   add_index "payments", ["service_order_id"], name: "index_payments_on_service_order_id"

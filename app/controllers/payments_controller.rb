@@ -19,10 +19,13 @@ class PaymentsController < ApplicationController
 
 	def create
 		@payment = Payment.new(payment_params)
-		@payment.user = current_user
+		@payment.user = current_user		
 		#binding.pry
+		#@payment.update_balance(@payment.amount, @payment.service_order)
 		@payment.save		
 		if @payment.save
+			@service_order = @payment.service_order
+			@payment.update_balance(@service_order)
 			redirect_to payments_path
 		else
 			render 'new'
@@ -38,6 +41,7 @@ class PaymentsController < ApplicationController
 	def payment_params
 		params.require(:payment).permit(
 			:amount,
+			:balance,
 			:description,
 			:payed_at,
 			:service_order_id,
