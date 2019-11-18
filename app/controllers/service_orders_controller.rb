@@ -95,6 +95,12 @@ class ServiceOrdersController < ApplicationController
     end
   end
 
+  def add_payment
+    @service_order = ServiceOrder.new
+    @service_order.payments.build
+    
+  end
+
   
 
   private

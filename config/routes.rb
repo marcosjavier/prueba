@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   resources :devices
   resources :payments
 
+  #get 'service_orders/:id/payment', to: 'service_orders#add_payment'
+
 
   get 'welcome/index'
 

@@ -1,5 +1,6 @@
 class PaymentsController < ApplicationController
 	#before_action :set_payment, only: :new
+	before_action :set_service_order, only: [:new, :create]
 
 	def index
 		if params[:service_order_id]
@@ -14,7 +15,9 @@ class PaymentsController < ApplicationController
 	end
 
 	def new
-		@payment = Payment.new	
+		#binding.pry
+		#@service_order.payments.build
+		@payment = Payment.new
 	end
 
 	def create
@@ -24,6 +27,7 @@ class PaymentsController < ApplicationController
 		#@payment.update_balance(@payment.amount, @payment.service_order)
 		@payment.save		
 		if @payment.save
+			#binding.pry
 			@service_order = @payment.service_order
 			@payment.update_balance(@service_order)
 			redirect_to payments_path
@@ -38,6 +42,11 @@ class PaymentsController < ApplicationController
 		@payment = Payment.find(params[:id])
 		
 	end
+
+	def set_service_order
+    @service_order = ServiceOrder.find(params[:service_order_id])
+    	
+  end
 	def payment_params
 		params.require(:payment).permit(
 			:amount,

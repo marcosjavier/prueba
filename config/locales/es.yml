@@ -194,6 +194,7 @@ es:
       payments: Pagos
       state: Estado
       view: View
+      cost: Costo
     show:
       show_service_order: Orden de Servicio
   views:

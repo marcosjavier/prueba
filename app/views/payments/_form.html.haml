@@ -1,7 +1,8 @@
-= simple_form_for @payment do |f|
-	= f.input	:amount	
+= simple_form_for [@service_order, @payment] do |f|
+	-#= f.simple_fields_for :payments do |p|
+	= f.input :amount	
 	= f.input :description
 	= f.input :payed_at, as: :date, html5: true
-	= f.association :service_order, collection: ServiceOrder.closed, label_method: :id
+	= f.input :service_order_id, input_html: { value: @service_order.id}, as: :hidden
 	= f.submit
 

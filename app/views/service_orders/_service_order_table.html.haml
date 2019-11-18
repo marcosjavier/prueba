@@ -18,11 +18,11 @@
         %td= link_to t('.payments'), service_order_payments_path(os.id),remote: true
         -if os.payments.exists?
           -if os.payments.last.balance != 0
-            %td= link_to t('.add_payment'), new_payment_path , remote: true
+            %td= link_to t('.add_payment'), new_service_order_payment_path(os) , remote: true
           -else
             %td
         -else
-          %td= link_to t('.add_payment'), new_payment_path , remote: true
+          %td= link_to t('.add_payment'), new_service_order_payment_path(os) , remote: true
 
       %td= link_to t('.customer'), customer_path(os.customer), remote: true
       -if os.device.present?
