@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   end
   resources :devices
   resources :payments
+  resources :payment_types
 
   #get 'service_orders/:id/payment', to: 'service_orders#add_payment'
 

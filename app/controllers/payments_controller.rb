@@ -30,7 +30,7 @@ class PaymentsController < ApplicationController
 			#binding.pry
 			@service_order = @payment.service_order
 			@payment.update_balance(@service_order)
-			redirect_to payments_path
+			redirect_to service_orders_path
 		else
 			render 'new'
 		end
@@ -54,7 +54,8 @@ class PaymentsController < ApplicationController
 			:description,
 			:payed_at,
 			:service_order_id,
-			:user_id
+			:user_id,
+			:payment_type_id
 			)
 		
 	end

@@ -48,6 +48,17 @@
           %li
             %a{:href => new_payment_path}
               = t('.new_payment')
+      %li.dropdown{class: "#{'active' if params[:controller] == ('payment_types') }"}
+        %a{:href => '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' }
+          %i.ti-view-list-alt
+          %p Tipos de Pago
+        %ul.dropdown-menu        
+          %li
+            %a{:href => payment_types_path}
+              = t('.payment_types_list')
+          %li
+            %a{:href => new_payment_type_path}
+              = t('.new_payment_types')
           
      
 

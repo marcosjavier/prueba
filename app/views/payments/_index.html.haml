@@ -7,7 +7,7 @@
         %th= t('.balance')
         %th= t('.description')
         %th= t('.payed_at')
-        -#%th= t('.service_order')
+        %th= t('.payment_type')
 
     -@payments.each do |payment|
       %tbody
@@ -18,3 +18,4 @@
           %td= payment.description
           %td= payment.payed_at.strftime('%d-%m-%Y')
           -#%td= link_to 'Service Order',service_order_path(payment.service_order.id), remote: true
+          %td= payment.payment_type.description if payment.payment_type

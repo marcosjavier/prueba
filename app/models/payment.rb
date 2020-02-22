@@ -2,6 +2,7 @@ class Payment < ActiveRecord::Base
 	
   belongs_to :user
   belongs_to :service_order
+  belongs_to :payment_type
 
 
   monetize :amount_cents

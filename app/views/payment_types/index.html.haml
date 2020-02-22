@@ -1,0 +1,12 @@
+.card-content.table-responsive
+	%table.table
+		%thead.text-primary
+			%tr
+				%th= t('.id')
+				%th= t('.description')
+	
+		%tbody
+		-@payment_types.each do |p_t|
+			%tr
+				%td= p_t.id
+				%td= p_t.description
