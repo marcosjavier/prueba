@@ -8,6 +8,9 @@ class ServiceOrder < ActiveRecord::Base
 	belongs_to :status
 	has_one :device
 	has_many :movements
+	has_many :payments
+	accepts_nested_attributes_for :payments
+	monetize :cost_cents
 	
 	
 
@@ -25,6 +28,13 @@ class ServiceOrder < ActiveRecord::Base
 		end	 
 		
 	end
+
+	def get_status
+		self.status.description
+		
+	end
+
+	
 
   #def self.filter(date_start,date_end)
   #

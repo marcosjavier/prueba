@@ -64,3 +64,5 @@ gem 'bourbon'
 gem 'geocoder'
 #gem to handle pagination
 gem 'kaminari'
+#gem to handle monetize objects
+gem 'money-rails', '~>1'

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 
+  description: MyString
+  payed_at: 2019-10-16 20:03:50
+  user_id: 
+  service_order_id: 
+
+two:
+  amount: 
+  description: MyString
+  payed_at: 2019-10-16 20:03:50
+  user_id: 
+  service_order_id: 

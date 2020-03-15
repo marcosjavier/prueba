@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191014130126) do
+ActiveRecord::Schema.define(version: 20191119202116) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "name"
@@ -62,6 +62,30 @@ ActiveRecord::Schema.define(version: 20191014130126) do
   add_index "movements", ["device_id"], name: "index_movements_on_device_id"
   add_index "movements", ["service_order_id"], name: "index_movements_on_service_order_id"
 
+  create_table "payment_types", force: :cascade do |t|
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.integer  "amount_cents",     default: 0,     null: false
+    t.string   "amount_currency",  default: "USD", null: false
+    t.string   "description"
+    t.datetime "payed_at"
+    t.integer  "user_id"
+    t.integer  "service_order_id"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.integer  "balance_cents",    default: 0,     null: false
+    t.string   "balance_currency", default: "USD", null: false
+    t.integer  "payment_type_id"
+  end
+
+  add_index "payments", ["payment_type_id"], name: "index_payments_on_payment_type_id"
+  add_index "payments", ["service_order_id"], name: "index_payments_on_service_order_id"
+  add_index "payments", ["user_id"], name: "index_payments_on_user_id"
+
   create_table "service_orders", force: :cascade do |t|
     t.date     "last_move_date_at"
     t.datetime "created_at"
@@ -69,6 +93,8 @@ ActiveRecord::Schema.define(version: 20191014130126) do
     t.integer  "customer_id"
     t.string   "reported_problem"
     t.integer  "status_id"
+    t.integer  "cost_cents",        default: 0,     null: false
+    t.string   "cost_currency",     default: "USD", null: false
   end
 
   add_index "service_orders", ["customer_id"], name: "index_service_orders_on_customer_id"

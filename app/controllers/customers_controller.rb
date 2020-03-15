@@ -23,7 +23,8 @@ class CustomersController < ApplicationController
   def new
     @customer = Customer.new
     respond_to do |format|
-      format.js
+      format.html
+      format.json { render json: @customer}
     end
   end
 

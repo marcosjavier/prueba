@@ -2,8 +2,8 @@
 	%tr
 		%td= link_to maintenance.id , maintenance_path(maintenance.id)
 		%td= maintenance.observations
-		%td= maintenance.pending_date
-		%td= maintenance.maintenance_date_made
+		%td= maintenance.pending_date.strftime('%d-%m-%Y')
+		%td= maintenance.maintenance_date_made.strftime('%d-%m-%Y') if maintenance.maintenance_date_made.present?
 		%td= maintenance[:status]
 		%td= maintenance.customer.name
 		%td= link_to 'Editar', edit_maintenance_path(maintenance.id)

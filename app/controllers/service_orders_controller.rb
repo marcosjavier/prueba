@@ -15,6 +15,7 @@ class ServiceOrdersController < ApplicationController
       @service_orders = ServiceOrder.order(:id).page params[:page]
       @service_order = ServiceOrder.new    
       @service_order_pending = ServiceOrder.pending
+      @service_order_payment = Payment.where service_order_id: params[:id]
     end
     
     
@@ -94,6 +95,12 @@ class ServiceOrdersController < ApplicationController
     end
   end
 
+  def add_payment
+    @service_order = ServiceOrder.new
+    @service_order.payments.build
+    
+  end
+
   
 
   private
@@ -102,6 +109,7 @@ class ServiceOrdersController < ApplicationController
   		params.require(:service_order).permit(
   		:created_at,
   		:last_move_date_at,
+      :cost,
   		:status_id,
   		:customer_id,
       :date_start,

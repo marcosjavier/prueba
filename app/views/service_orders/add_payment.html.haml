@@ -1,0 +1,8 @@
+= simple_form_for @service_order do |so|
+	= so.simple_fields_for :payments do |p|
+		= f.input :amount	
+		= f.input :description
+		= f.input :payed_at, as: :date, html5: true
+		-#= f.asociation :service_order_id
+		= f.submit
+		

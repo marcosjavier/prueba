@@ -1,0 +1,9 @@
+= simple_form_for [@service_order, @payment] do |f|
+	-#= f.simple_fields_for :payments do |p|
+	= f.input :amount	
+	= f.input :description
+	= f.input :payed_at, as: :date, html5: true
+	= f.input :service_order_id, input_html: { value: @service_order.id}, as: :hidden
+	= f.association :payment_type, label_method: :description, prompt: " Elige un método de pago" 
+	= f.submit
+

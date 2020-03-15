@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     end
     resources :movements
     resource :device
+    resources :payments
   end
 
   resources :maintenances do
@@ -20,6 +21,10 @@ Rails.application.routes.draw do
     end
   end
   resources :devices
+  resources :payments
+  resources :payment_types
+
+  #get 'service_orders/:id/payment', to: 'service_orders#add_payment'
 
 
   get 'welcome/index'

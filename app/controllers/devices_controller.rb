@@ -27,7 +27,12 @@ class DevicesController < ApplicationController
   	#binding.pry
   	
   	if @device.save
-  		redirect_to devices_path
+      #binding.pry
+      if params[:service_order_id]
+        redirect_to service_orders_path
+      else
+  		  redirect_to devices_path
+      end
   	else
   		render @device
   	end

@@ -65,6 +65,7 @@ es:
       edit_customer: Editar Cliente
     index:
       address: Dirección
+      back: Back
       id: ID
       listing_customers: Lista de Clientes
       name: Nombre
@@ -82,6 +83,8 @@ es:
   devices:
     edit:
       edit_device: Editar Dispositivo
+    form:
+      for_service_order: For service order
     index:
       admission_date: Fecha de Adimisión
       discharge_date: Fecha de Salida Taller
@@ -93,6 +96,7 @@ es:
       type_of_device: Tipo de Dispositivo
     new:
       new_device: Nuevo Dispositivo
+      service_order: Service order
     show:
       view_device: Mostrar Dispositivo
   devise:
@@ -116,6 +120,8 @@ es:
         maintenances_list: Lista de Mantenimientos
         new_device: Nuevo Dispositivo
         new_maintenance: Nuevo Mantenimiento
+        new_payment: Nuevo Pago
+        payments_list: Lista de Pagos
   maintenances:
     index:
       customer: Cliente
@@ -134,8 +140,11 @@ es:
       pending_date: Fecha de Mantenimiento Pendiente
       status: Estado
   movements:
+    form:
+      for_service_order: For service order
     index:
       computer_supplies: Insumos informáticos
+      device: Device
       id: Id
       movements_list: Lista de Movimientos
       observations: Observaciones
@@ -143,6 +152,16 @@ es:
     new:
       new_movement: Nuevo Movimiento
   observations: Observaciones
+  payments:
+    index:
+      amount: Monto
+      description: Descripción
+      id: Id
+      listing_payments: Lista de Pagos
+      payed_at: Pagado el
+      payments_list: Lista de Pagos  de esta Orden Servicio
+      service_order: Orden de Servicio
+      balance: Saldo
   service_orders:
     create:
       a new service order has been created: Una Nueva Orden de Servicios a sido creada
@@ -159,20 +178,23 @@ es:
     new:
       new_service_order: Nueva Orden de Servicio
     service_order_table:
-      actual_state: Estado Actual
-      add_device: Agregar Dispositivo
+      actual_state: Estado
+      add_device: Agregar Disp.
+      add_movement: Agregar Mov.
       closed: Cerrado
-      creation_date: Fecha de Creación
+      creation_date: Creación
       customer: Cliente
       delete: Eliminar
       device: Dispositivo
       edit: Editar
       id: Id
-      last_move_date: Fecha de último movimiento
+      last_move_date: Último mov.
       movements: Movimientos
       opened: Abierto
+      payments: Pagos
       state: Estado
       view: View
+      cost: Costo
     show:
       show_service_order: Orden de Servicio
   views:
@@ -196,5 +218,6 @@ es:
       creation_date: Fecha de Creacion
       id: Id
       last_move_date: Fecha de ultimo Movimiento
+      movements: Movements
       opened: Abierto
   work_done: Trabajo Realizado
