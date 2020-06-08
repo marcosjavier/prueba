@@ -15,4 +15,4 @@
 .row
 	.card#table
 		=render 'service_order_table', service_orders: @service_orders
-		= link_to "Agregar nueva orden servicios", new_service_order_path, remote: true, class: "btn btn-primary"
+		= link_to "Agregar nueva orden servicios", new_service_order_path#, remote: true, class: "btn btn-primary"

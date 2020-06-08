@@ -21,4 +21,5 @@
 //= require js/bootstrap-notify
 //= require js/material-dashboard
 //= require turbolinks
+//= require cocoon
 // require_tree .

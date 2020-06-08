@@ -1,7 +1,15 @@
-= t('.for_service_order')
-= service_order.id
-= simple_form_for [service_order, movement], remote: true do |f|
-	= f.input :work_done
-	= f.input :computer_supplies
-	= f.input :observations
-	= f.submit 'guardar'
+-#= service_order.id
+-#= simple_form_for [service_order, movement], remote: true do |f|
+.input-group.nested-fields
+	.col-lg-3
+		.form-group
+			= f.input :work_done, input_html: { class: 'work_done'}
+	.col-lg-3
+		.form-group
+			= f.input :computer_supplies, input_html: { class: 'computer_supplies'}
+	.col-lg-3
+		.form-group
+			= f.input :observations, input_html: { class: 'observations'}
+	.col-lg-3
+		.form-group
+			= link_to_remove_association "remove movement", f

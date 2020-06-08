@@ -1,13 +1,31 @@
-= simple_form_for service_order, remote: true do |f|
-	= f.input :created_at, as: :date, html5: true
-	= f.input :reported_problem
-	= f.association :customer, as: :select
-	= f.input :cost
-	- unless service_order.new_record?
-		= f.association :status, label_method: :description, value_method: :id
-	-else
-		= f.association :status, as: :hidden, input_html: { value:  1 }
-	- unless service_order.new_record?
-		= link_to 'Agregar Movimietos', new_service_order_movement_path(service_order.id), remote: true
-		%br    
-	= f.submit 'guardar'
+
+%h2 Service Order
+= simple_form_for @service_order do |f|
+  .content
+    .input-group
+      .col-md-2
+        = f.input :created_at, as: :date, html5: true
+      .col-md-2
+        = f.association :customer
+      .col-md-2
+        = f.input :reported_problem
+      .col-md-2
+        = f.input :status_id, collection: Status.all,  label_method: :description
+      .col-md-2
+        = f.input :cost
+    .row
+      .col-lg-12
+        .card
+          .header
+            %h3.title
+              Movements
+          .content
+            #movements                           
+              =f.simple_fields_for :movements do |mov|
+                = render 'movements/form', f: mov
+              .links
+                = link_to_add_association 'add movement', f, :movements, partial: 'movements/form'
+
+  = f.submit value: 'Guardar Orden de Servicio'
+
+

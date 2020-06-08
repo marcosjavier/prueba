@@ -6,7 +6,7 @@
   = @service_order.last_move_date_at
 %p
   %strong State:
-  = @service_order.state.state
+  = @service_order.get_status
 %p
   %strong Customer:
   = @service_order.customer.name

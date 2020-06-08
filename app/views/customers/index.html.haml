@@ -43,7 +43,7 @@
                   = link_to 'Ordenes de Servicios', customer_service_orders_path(c.id), remote: true
         = paginate @customers
 
-  = link_to 'Agregar Cliente', new_customer_path#, remote: true
+  = link_to 'Agregar Cliente', new_customer_path, remote: true
   
 :javascript
   $(document).ready( function(){

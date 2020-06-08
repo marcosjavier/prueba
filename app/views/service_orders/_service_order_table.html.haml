@@ -5,6 +5,7 @@
     %th= t('.last_move_date')
     %th= t('.actual_state')
     %th= t('.cost')
+    %th= t('.movements')
     
 
   - service_orders.each do |os|
@@ -30,7 +31,7 @@
       -else
         %td= link_to t('.add_device'), new_service_order_device_path(os) , remote: true
       %td= link_to t('.delete'), service_order_path(os.id), method: :delete, data: {confirm: 'Are you sure?'}
-      %td= link_to t('.edit'), edit_service_order_path(os.id), remote: true
+      %td= link_to t('.edit'), edit_service_order_path(os.id)
       -if os.device.present?
         %td= link_to t('.movements') , service_order_movements_path(os.id)
       -unless os.status.description == "closed" || os.device.nil?

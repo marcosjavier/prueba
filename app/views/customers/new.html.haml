@@ -1,30 +1,7 @@
 %h1
-	= ('.new_customer')
+	= t('.new_customer')
 = render 'form', customer: @customer
 = link_to "Atras", customers_path
 
-:javascript
-	$(document).ready( function(){
-		$("#customer_id").click(function(){
-			var customerId = $("#customer_id").val();
-			console.log(customerId);
-			console.log(typeof customerId);
-			console.log("/customers/"+customerId)
-			$.get("/customers/"+customerId+".json", function(data){ 
-								
-				console.log(data.name);
-				$("#customer_name").val(data.name);
-				$("#customer_surname").val(data.surname);
-				$("#customer_tradename").val(data.tradename);
-				$("#customer_address").val(data.address);
-				$("#customer_phone").val(data.phone);
-				
 
-
-			});
-				
-			
-		});
-
-		});
 		

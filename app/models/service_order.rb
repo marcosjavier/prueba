@@ -10,6 +10,7 @@ class ServiceOrder < ActiveRecord::Base
 	has_many :movements
 	has_many :payments
 	accepts_nested_attributes_for :payments
+	accepts_nested_attributes_for :movements, reject_if: :all_blank, allow_destroy: true
 	monetize :cost_cents
 	
 	

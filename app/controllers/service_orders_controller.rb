@@ -42,10 +42,10 @@ class ServiceOrdersController < ApplicationController
     @service_order = ServiceOrder.create(service_order_params)    
 
     respond_to do |format|
-      #format.html do
-      #  redirect_to @service_order,
-      #  notice: t('.a new service order has been created')
-      #end
+      format.html do
+        redirect_to @service_order,
+        notice: t('.a new service order has been created')
+      end
       format.js
       #format.json do
        # render json: @service_order,
@@ -57,16 +57,19 @@ class ServiceOrdersController < ApplicationController
   end
 
   def edit
-    respond_to do |format|
-      format.js
-    end
+    #respond_to do |format|
+      #format.js
+    #end
   end
   def update
+
     @service_order.update(service_order_params)
-    
     respond_to do |format|
-      format.js
+      format.html { redirect_to(service_orders_path, notice: "ServiceOrder successfully updated") }
     end
+    #respond_to do |format|
+    #  format.js
+    #end
 
   end
 
@@ -115,7 +118,13 @@ class ServiceOrdersController < ApplicationController
       :date_start,
       :date_end,
       :reported_problem,
-      :device_id      
+      :device_id,
+        movements_attributes: [
+          :id,
+          :work_done,
+          :computer_supplies,
+          :observations,
+          :_destroy ]      
       )
 
   	end

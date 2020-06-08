@@ -22,10 +22,7 @@ class CustomersController < ApplicationController
 
   def new
     @customer = Customer.new
-    respond_to do |format|
-      format.html
-      format.json { render json: @customer}
-    end
+    
   end
 
   def show
@@ -39,9 +36,10 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
 
-    @customer.save
-    respond_to do |format|
-      format.js
+    if @customer.save
+      redirect_to customers_path
+    else
+      render 'new'
     end
   end
 

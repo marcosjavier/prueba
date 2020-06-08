@@ -66,3 +66,4 @@ gem 'geocoder'
 gem 'kaminari'
 #gem to handle monetize objects
 gem 'money-rails', '~>1'
+gem "cocoon"
