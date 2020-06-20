@@ -22,4 +22,5 @@
 //= require js/material-dashboard
 //= require turbolinks
 //= require cocoon
-// require_tree .
+//= require customers
+//= require_tree .

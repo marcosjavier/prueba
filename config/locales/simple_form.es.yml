@@ -9,4 +9,11 @@ es:
       defaults:
         date_start: Inicio de Fecha
         date_end: Fin de Fecha
+  cocoon:
+    defaults:
+      add: "Agregar Registro"
+      remove: "Remover Registro"
+    tasks:
+      add: "Agregar nueva tarea"
+      remove: "Remover vieja tarea"
         

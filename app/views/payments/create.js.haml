@@ -1,0 +1,4 @@
+- if @payment.errors.any?
+  $('.modal-body').html("#{j render('payments/form', payment: @payment)}");
+- else
+  location.reload();

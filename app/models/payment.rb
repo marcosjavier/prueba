@@ -1,4 +1,6 @@
 class Payment < ActiveRecord::Base
+
+  validates :payment_type, :payed_at, presence: true
 	
   belongs_to :user
   belongs_to :service_order

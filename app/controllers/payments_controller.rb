@@ -25,22 +25,36 @@ class PaymentsController < ApplicationController
 		@payment.user = current_user		
 		#binding.pry
 		#@payment.update_balance(@payment.amount, @payment.service_order)
-		@payment.save		
+		#@payment.save		
 		if @payment.save
 			#binding.pry
 			@service_order = @payment.service_order
 			@payment.update_balance(@service_order)
-			redirect_to service_orders_path
-		else
-			render 'new'
+			#redirect_to service_orders_path			  	
+	    
 		end
+		respond_to do |format|
+				format.js	 
+		end   
+
+
+
 		
 	end
 
+	def edit; end
+
+	def update
+	    @payment.update(payment_params)
+	    respond_to do |format|
+	      format.js
+
+    end
+  end
+
 	private
 	def set_payment
-		@payment = Payment.find(params[:id])
-		
+		@payment = Payment.find(params[:id])		
 	end
 
 	def set_service_order

@@ -13,8 +13,10 @@
               %th= t('.id')
               %th= t('.amount')
               %th= t('.description')
+              %th= t('.payment_type')
               %th= t('.payed_at')
               %th= t('.service_order')
+              
 
           -@payments.each do |payment|
             %tbody
@@ -22,5 +24,6 @@
                 %td= payment.id
                 %td= payment.amount
                 %td= payment.description
+                %td= payment.payment_type.description if payment.payment_type.present?               
                 %td= payment.payed_at.strftime('%d-%m-%Y')
                 %td= link_to 'Service Order',service_order_path(payment.service_order.id), remote: true

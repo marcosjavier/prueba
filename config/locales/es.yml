@@ -23,6 +23,11 @@ es:
         observations: Observaciones
         pending_date: Fecha pendiente
         status: Estado
+      payment:
+        amount: Monto
+        description: Descripción
+        payed_at: Pagado el
+        payment_type: Tipo de Pago
       service_order:
         creation_date_at: Fecha de creacioón
         customer: Cliente
@@ -47,8 +52,15 @@ es:
               invalid: SOLO SE PERMITEN LETRAS
             phone:
               not_a_number: NO ES UN NÚMERO
+        payment:
+          attributes:
+            payed_at:
+              blank: ESTE CAMPO NO PUEDE ESTAR VACÍO
+            payment_type:
+              blank: ESTE CAMPO NO PUEDE ESTAR VACÍO
     models:
       customer: Cliente
+      payment: Pago
       service_order: Orden de Servicio
       state: Estado
       user: Usuario
@@ -65,8 +77,10 @@ es:
       edit_customer: Editar Cliente
     index:
       address: Dirección
-      back: Back
-      id: ID
+      back: Atrás
+      delete: Borrar
+      edit: Editar
+      id: Id
       listing_customers: Lista de Clientes
       name: Nombre
       phone: Telefono
@@ -121,6 +135,8 @@ es:
         new_device: Nuevo Dispositivo
         new_maintenance: Nuevo Mantenimiento
         new_payment: Nuevo Pago
+        new_payment_types: Nuevo Tipo de Pago
+        payment_types_list: Lista de Tipos de Pago
         payments_list: Lista de Pagos
   maintenances:
     index:
@@ -142,6 +158,8 @@ es:
   movements:
     form:
       for_service_order: For service order
+      remove movement: Quitar movimiento
+      add movement: Agregar Movimiento
     index:
       computer_supplies: Insumos informáticos
       device: Device
@@ -152,21 +170,33 @@ es:
     new:
       new_movement: Nuevo Movimiento
   observations: Observaciones
+  payment_types:
+    index:
+      description: Descripción
+      id: Id
   payments:
+    edit:
+      edit_payment: Editar Pago
     index:
       amount: Monto
+      balance: Saldo
       description: Descripción
       id: Id
       listing_payments: Lista de Pagos
       payed_at: Pagado el
+      payment_type: Tipo de Pago
       payments_list: Lista de Pagos  de esta Orden Servicio
       service_order: Orden de Servicio
-      balance: Saldo
+    new:
+      new_payment: Nuevo Pago
+    show:
+      show_payment: Ver Pago
   service_orders:
     create:
       a new service order has been created: Una Nueva Orden de Servicios a sido creada
     customer_service_orders:
       creation_date: Fecha de Creación
+      edit: Edit
       id: Id
       last_move_date: Fecha de Ultimo Movimiento
       status: Estado
@@ -174,27 +204,28 @@ es:
       edit_service_order: Editar Orden de Servicio
     index:
       Listing_Service_Orders: Lista de Ordenes de Servicios
-      service_orders: Service orders
+      service_orders: Ordenes de Servicio
     new:
       new_service_order: Nueva Orden de Servicio
     service_order_table:
       actual_state: Estado
       add_device: Agregar Disp.
       add_movement: Agregar Mov.
+      add_payment: Agregar Pago
       closed: Cerrado
+      cost: Costo
       creation_date: Creación
       customer: Cliente
       delete: Eliminar
       device: Dispositivo
       edit: Editar
       id: Id
-      last_move_date: Último mov.
+      last_move_date: "Último mov."
       movements: Movimientos
       opened: Abierto
       payments: Pagos
       state: Estado
       view: View
-      cost: Costo
     show:
       show_service_order: Orden de Servicio
   views:
@@ -217,7 +248,7 @@ es:
       actual_state: Estado Actual
       creation_date: Fecha de Creacion
       id: Id
-      last_move_date: Fecha de ultimo Movimiento
-      movements: Movements
+      last_move_date: Fecha de último Movimiento
+      movements: Movimientos
       opened: Abierto
   work_done: Trabajo Realizado

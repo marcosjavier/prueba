@@ -36,11 +36,11 @@
                 %td= c.address
                 %td= c.phone
                 %td
-                  = link_to 'Edit', edit_customer_path(c.id), remote: true
+                  = link_to t('.edit'), edit_customer_path(c.id), remote: true
                 %td
-                  = link_to 'Delete', customer_path(c.id), method: :delete, data: { confirm: '¿Está seguro de querer borrar este registro?'}
+                  = link_to t('.delete'), customer_path(c.id), method: :delete, data: { confirm: '¿Está seguro de querer borrar este registro?'}
                 %td
-                  = link_to 'Ordenes de Servicios', customer_service_orders_path(c.id), remote: true
+                  = link_to t('.service_orders'), customer_service_orders_path(c.id), remote: true
         = paginate @customers
 
   = link_to 'Agregar Cliente', new_customer_path, remote: true

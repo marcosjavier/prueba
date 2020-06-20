@@ -11,5 +11,5 @@
       %td= os.created_at.strftime('%d-%m-%Y')
       %td= os.updated_at.strftime('%d-%m-%Y')
       %td= t(os.status.description) if os.status.present?
-      %td= link_to "Edit", edit_service_order_path(os.id), remote: true, class: "btn btn-primary"
+      %td= link_to t('.edit'), edit_service_order_path(os.id), remote: true, class: "btn btn-primary"
 

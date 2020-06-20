@@ -1,4 +1,4 @@
-= simple_form_for [@service_order, @payment] do |f|
+= simple_form_for [@service_order, @payment], remote: true do |f|
 	-#= f.simple_fields_for :payments do |p|
 	= f.input :amount	
 	= f.input :description

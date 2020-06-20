@@ -18,6 +18,7 @@ module Prueba
     config.time_zone = 'Buenos Aires'
     config.active_record.default_timezone = :local
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.compile = true
 
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
