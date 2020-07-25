@@ -1,11 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  creation_date_at: 2018-03-17
-  last_move_date_at: 2018-03-17
-  estate: MyString
+  last_move_date_at: 2018-03-17  
+  reported_problem: MyString
+  status_id: 1
+  cost_cents: 200
+  cost_currency: MyString
+  customer: two
 
-two:
-  creation_date_at: 2018-03-17
+two:  
   last_move_date_at: 2018-03-17
-  estate: MyString
+  reported_problem: MyString
+  status_id: 2
+  cost_cents: 200
+  cost_currency: MyString 
+  customer: one
+  

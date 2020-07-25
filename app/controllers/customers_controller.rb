@@ -1,6 +1,7 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy, :service_orders_list]
 
+  
   def index
     if params[:search]
       name = params[:search][:name]

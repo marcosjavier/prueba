@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',    group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+#gem 'spring',        group: :development
 
 # gem to generate pdf files
 gem 'wicked_pdf'
@@ -67,3 +67,18 @@ gem 'kaminari'
 #gem to handle monetize objects
 gem 'money-rails', '~>1'
 gem "cocoon"
+
+group :development, :test do
+    gem 'sqlite3'
+    gem 'byebug'
+    gem 'web-console', '2.2.1'
+    gem 'spring'
+    
+end
+
+group :test do
+    gem 'minitest-reporters', '1.0.20'
+    gem 'mini_backtrace', '0.1.3'
+    gem 'guard-minitest', '2.4.4'
+    gem 'guard', '2.11.0'
+end

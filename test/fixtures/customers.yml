@@ -5,9 +5,11 @@ one:
   surname: MyString
   tradename: MyString
   address: MyString
+  phone: MyString
 
 two:
   name: MyString
   surname: MyString
   tradename: MyString
   address: MyString
+  phone: MyString
