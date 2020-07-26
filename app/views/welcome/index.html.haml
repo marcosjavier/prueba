@@ -1,13 +1,33 @@
 
-%h1 Bienvenido a la aplicación
-%h3 Ordenes de Servicio Pendientes
-.card#table_service_orders_pending
-  
-  = render 'service_order_pending', pending_service_orders: @pending_services_orders
-
-
-%h3 Mantenimientos Pendientes
-.card#table_pending_maintenances
-  = render 'pending_maintenances', pending_maintenances: @pending_maintenances
-
-
+.col-lg-3.col-md6.col-sm-6
+  .card.card-stats
+    .card-body
+      .row
+        .col-5.col-md-4
+        .col-7.col-md-8
+          .numbers
+            %p.card-category 
+              = t('.pending_services_orders')
+            %p.card-title
+              =@pending_services_orders.count
+    .card-footer
+      .stats
+        %i.fa.fa-refresh
+          Update Now
+.col-lg-3.col-md-6.col-sm-6
+  .card.card-stats
+    .card-body
+      .row
+        .col-5.col-md-4
+        .col-7.col-md-8
+          .numbers
+            %p.card-category 
+              = t('.pending_maintenances')
+            %p.card-title
+              =@pending_maintenances.count
+    .card-footer
+      .stats
+        %i.fa.fa-refresh
+          Update Now
+.col-lg-3.col-md-6.col-sm-6
+.col-lg-3.col-md-6.col-sm-6
