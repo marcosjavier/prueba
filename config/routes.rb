@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     collection do
       get 'filter_by_date'
       post 'filter_by_date', defaults: {format: :js}
+      get 'pending'
     end
     resources :movements
     resource :device

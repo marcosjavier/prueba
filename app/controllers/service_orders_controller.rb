@@ -104,6 +104,11 @@ class ServiceOrdersController < ApplicationController
     
   end
 
+  def pending
+    @service_orders = ServiceOrder.pending.order(:id).page params[:page]
+    
+  end
+
   
 
   private

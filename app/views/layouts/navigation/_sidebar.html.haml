@@ -8,10 +8,18 @@
         %a{:href => customers_path}
           %i.ti-user
           %p Clientes
-      %li{ class: "#{'active' if params[:controller] == 'service_orders'}" }
-        %a{:href => service_orders_path}
+      %li.dropdown{ class: "#{'active' if params[:controller] == 'service_orders'}" }
+        %a{:href => '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' }
           %i.ti-view-list-alt
-          %p Ordenes Servicio
+          %p Ordenes de Servicio
+        %ul.dropdown-menu
+          %li
+            %a{:href => service_orders_path}
+              = t('.service_orders')
+          %li
+            %a{:href => pending_service_orders_path}
+              = t('.service_orders_pending')
+          
       %li.dropdown{class: "#{'active' if params[:controller] == ('maintenances') }"}
         %a{:href => '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' }
           %i.ti-view-list-alt

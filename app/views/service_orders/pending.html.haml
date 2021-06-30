@@ -1,0 +1,10 @@
+.row
+    .col-md-12
+        .card
+            .card-header{"data-background-color" => "red"}
+                %h4.title
+                    = t('.pending_service_orders_list')
+            .card-content.table-responsive
+                %table.table
+                    = render 'service_order_table', service_orders: @service_orders
+
