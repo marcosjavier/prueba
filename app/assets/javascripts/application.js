@@ -14,13 +14,14 @@
 //= require jquery
 //= require jquery-ui/widgets/autocomplete
 //= require jquery_ujs
+//= require_tree .
+//= require turbolinks
 // require jquery3
 //= require bootstrap
 //= require js/material.min
 //= require js/chartist.min
 //= require js/bootstrap-notify
 //= require js/material-dashboard
-//= require turbolinks
+
 //= require cocoon
 //= require customers
-//= require_tree .

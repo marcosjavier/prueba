@@ -11,17 +11,17 @@
  * file per style scope.
  *
  *
- * require xray
- *= require_self
+ * require xray 
  * require css/animate.min
  *= require material-dashboard
  *= require font-awesome
  *= require themify-icons
  *= require jquery-ui
  *= require jquery-ui/datepicker
+ *= require_self
  */
 
-@import "bootstrap-sprockets";
+//@import "bootstrap-sprockets";
 @import "bootstrap";
 @import "germanica";
 
