@@ -73,7 +73,7 @@ group :development, :test do
     gem 'byebug'
     gem 'web-console', '2.2.1'
     gem 'spring'
-    
+    gem "letter_opener"
 end
 
 group :test do
