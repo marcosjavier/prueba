@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/scratch-soft/themify-icons-rails.git
+  remote: https://github.com/scratch-soft/themify-icons-rails.git
   revision: af9160153187b577d32011fb3cf698a92d81a820
   specs:
     themify-icons-rails (1.0.1.2)
@@ -295,7 +295,7 @@ GEM
     turbolinks (5.1.1)
       turbolinks-source (~> 5.1)
     turbolinks-source (5.1.0)
-    tzinfo (1.2.5)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     uglifier (4.1.12)
       execjs (>= 0.3.0, < 3)
